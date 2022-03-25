@@ -1,18 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
+using ANKU.Controllers.Abstracts;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace ANKU.Controllers.Concretes
 {
-    public class GunController : MonoBehaviour
-    {
-        [SerializeField] private int ammoCount;
-
-        private int _currentAmmoCount;
-
-        public int CurrentAmmoCount => _currentAmmoCount;
-
+    public class BulletSpawnController : SpawnerController
+    {   
         public MyInputActions inputActions; 
         
         private InputAction _fire;
@@ -29,20 +22,25 @@ namespace ANKU.Controllers.Concretes
             _fire.performed += Fire;
         }
 
+        protected override void Start()
+        {
+            base.Start();
+        }
+
+        private void Spawn()
+        {
+            Debug.Log(spawnObject.gameObject.name.ToString() + " spawned");
+            Instantiate(spawnObject, spawnPoint.transform.position, Quaternion.identity);
+        }
+        
+        private void Fire(InputAction.CallbackContext context)
+        {
+            Spawn();
+        }
+
         private void OnDisable()
         {
             _fire.Disable();
         }
-
-        private void Start()
-        {
-            _currentAmmoCount = ammoCount;
-        }
-
-        private void Fire(InputAction.CallbackContext context)
-        {
-            if (_currentAmmoCount <= 0) _currentAmmoCount = 0;
-            _currentAmmoCount--;
-        }
-    }   
+    }
 }

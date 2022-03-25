@@ -7,12 +7,12 @@ public class FPSShooter : MonoBehaviour
     public Camera cam;
     public GameObject projectile;
     public Transform LHFirepoint, RHFirePoint;
-    public float fireRate = 4;
     public float projectileSpeed = 30;
     public float arcRange = 1;
     private Vector3 destination;
     private bool leftHand;
     private float timeToFire;
+    public float fireRate = 4;
     void Start()
     {
         

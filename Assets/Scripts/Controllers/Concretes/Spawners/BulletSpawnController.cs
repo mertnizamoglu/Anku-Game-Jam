@@ -1,3 +1,4 @@
+using System;
 using ANKU.Controllers.Abstracts;
 using ANKU.Enums.Concretes;
 using UnityEngine;
@@ -9,6 +10,7 @@ namespace ANKU.Controllers.Concretes
     {
         [SerializeField] private PlayerController _playerController;
         [SerializeField] private float bulletSpeed;
+        [SerializeField] private float fireRate = 4;
         
         public MyInputActions inputActions; 
         
@@ -16,6 +18,8 @@ namespace ANKU.Controllers.Concretes
         private InputAction _fire;
 
         private bool _canFire;
+        
+        private float timeToFire;
 
         private void Awake()
         {
@@ -32,12 +36,13 @@ namespace ANKU.Controllers.Concretes
 
         protected override void Update()
         {
-            if (_playerController.playerEnum == PlayerEnum.ANGEL_CHARACTER_MODE)
-            {
-                _canFire = false;
-                Debug.Log("ANGEL'A GIRDIM");
+            if (Input.GetMouseButtonDown(0) && 
+                FindObjectOfType<CharacterChangerController>().playerEnum == PlayerEnum.VILLIAN_CHARACTER_MODE && 
+                Time.time >= timeToFire)
+            { 
+                timeToFire = Time.time + 1/fireRate;
+                Spawn();
             }
-            if (_playerController.playerEnum == PlayerEnum.VILLIAN_CHARACTER_MODE) _canFire = true;
 
         }
 
@@ -54,11 +59,7 @@ namespace ANKU.Controllers.Concretes
         
         private void Fire(InputAction.CallbackContext context)
         {
-            Debug.Log("CAN FIRE: " + _canFire);
-            if (_canFire)
-            {
-                Spawn();
-            }
+       
         }
 
         private void OnDisable()

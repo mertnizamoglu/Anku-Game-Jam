@@ -18,7 +18,7 @@ namespace ANKU.Controllers.Abstracts
 
         protected virtual void Update()
         {
-            
+       
         }
     }
 }

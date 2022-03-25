@@ -11,7 +11,7 @@ namespace ANKU.Controllers.Concretes
     {
         [SerializeField] private List<PlayerController> playerControllers;
 
-        [SerializeField] private PlayerEnum playerEnum;
+        [SerializeField] public PlayerEnum playerEnum;
 
         public MyInputActions inputActions; 
         

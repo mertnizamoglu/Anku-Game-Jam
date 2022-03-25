@@ -6,6 +6,9 @@ TagManager:
   tags:
   - CinemachineTarget
   - Enemy
+  - HitButton
+  - NotHitButton
+  - Bullet
   layers:
   - Default
   - TransparentFX

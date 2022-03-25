@@ -10,6 +10,7 @@ namespace ANKU.Controllers.Concretes
     {
         [SerializeField] private PlayerController _playerController;
         [SerializeField] private float bulletSpeed;
+        [SerializeField] private float fireRate = 4;
         
         public MyInputActions inputActions; 
         
@@ -17,6 +18,8 @@ namespace ANKU.Controllers.Concretes
         private InputAction _fire;
 
         private bool _canFire;
+        
+        private float timeToFire;
 
         private void Awake()
         {
@@ -33,8 +36,9 @@ namespace ANKU.Controllers.Concretes
 
         protected override void Update()
         {
-            if (Input.GetMouseButtonDown(0) && FindObjectOfType<CharacterChangerController>().playerEnum == PlayerEnum.VILLIAN_CHARACTER_MODE)
-            {
+            if (Input.GetMouseButtonDown(0) && FindObjectOfType<CharacterChangerController>().playerEnum == PlayerEnum.VILLIAN_CHARACTER_MODE && Time.time >= timeToFire)
+            { 
+                timeToFire = Time.time + 1/fireRate;
                 Spawn();
             }
 

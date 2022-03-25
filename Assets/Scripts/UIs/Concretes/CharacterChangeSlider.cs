@@ -1,18 +1,19 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterChangeSlider : MonoBehaviour
+namespace ANKU.UIs.Concretes
 {
-    // Start is called before the first frame update
-    void Start()
+    public class CharacterChangeSlider : MonoBehaviour
     {
-        
-    }
+        [SerializeField] private float changeTime;
 
-    // Update is called once per frame
-    void Update()
-    {
+        private float _currentTime;
         
+        private void Update()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

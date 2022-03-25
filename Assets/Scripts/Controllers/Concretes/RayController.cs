@@ -18,8 +18,6 @@ namespace ANKU.Controllers.Concretes
 
         public void SendRay()
         {
-            // TODO: Input System Mouse
-
             RaycastHit hit;
 
             Ray ray = _player.camera.ScreenPointToRay(Mouse.current.position.ReadValue());

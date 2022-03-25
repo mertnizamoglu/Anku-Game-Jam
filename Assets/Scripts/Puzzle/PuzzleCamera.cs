@@ -85,13 +85,13 @@ public class PuzzleCamera : MonoBehaviour
         if(InPuzzleArea && !puzzleMode && Input.GetKeyDown(KeyCode.E))
         {
             
-            Cursor.visible = true;
+            Cursor.visible = false;
             Cursor.lockState = CursorLockMode.None;
             
         }
         else if(InPuzzleArea && puzzleMode && Input.GetKeyDown(KeyCode.E))
         {
-            Cursor.visible = false;
+            Cursor.visible = true;
             Cursor.lockState = CursorLockMode.Locked;
         }
     }

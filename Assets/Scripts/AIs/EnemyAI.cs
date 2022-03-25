@@ -44,7 +44,6 @@ public class EnemyAI : MonoBehaviour
         {
             AttackPlayer();
         }
-
     }
 
     void Patrol()

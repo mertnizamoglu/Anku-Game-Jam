@@ -25,7 +25,6 @@ namespace ANKU.Controllers.Concretes
 
             if (Physics.Raycast(ray, out hit, 100))
             {
-                Debug.DrawRay(_player.rayStartLocation.transform.position, 
                 Debug.DrawRay(ray.origin, hit.point, Color.red);
             }
         }

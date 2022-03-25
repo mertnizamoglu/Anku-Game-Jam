@@ -7,7 +7,6 @@ namespace ANKU.Controllers.Abstracts
 {
     public abstract class PlayerController : MonoBehaviour
     {
-        public GameObject rayStartLocation;
         public Camera camera;
 
         protected virtual void Awake()

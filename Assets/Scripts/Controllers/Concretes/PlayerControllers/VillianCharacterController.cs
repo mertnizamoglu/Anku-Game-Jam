@@ -8,7 +8,9 @@ namespace ANKU.Controllers.Concretes
 {
     public class VillianCharacterController : PlayerController
     {
+        [SerializeField] private GameObject gunController;
         private IRayController _rayController;
+        public GameObject GunController => gunController;
 
         protected override void Awake()
         {

@@ -9,6 +9,7 @@ TagManager:
   - HitButton
   - NotHitButton
   - Bullet
+  - SpawnZone
   layers:
   - Default
   - TransparentFX

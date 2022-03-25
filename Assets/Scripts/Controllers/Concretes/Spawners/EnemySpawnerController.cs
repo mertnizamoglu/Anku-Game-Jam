@@ -6,19 +6,18 @@ namespace ANKU.Controllers.Concretes
 {
     public class EnemySpawnerController : SpawnerController
     {
-        [SerializeField] private float spawnRate;
+        [SerializeField] private float difficulty;
         protected override void Start()
         {
             base.Start();
-            StartCoroutine(Spawn());
         }
 
-        private IEnumerator Spawn()
+        public void Spawn()
         {
-            yield return new WaitForSeconds(spawnRate);
-
-            Instantiate(spawnObject, this.transform.position, Quaternion.identity);
-            StartCoroutine(Spawn());
+            for (int i = 0; i < difficulty; i++)
+            {
+                Instantiate(spawnObject, this.transform.position, Quaternion.identity);
+            }
         }
     }
 }

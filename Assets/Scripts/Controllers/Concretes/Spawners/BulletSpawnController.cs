@@ -36,7 +36,9 @@ namespace ANKU.Controllers.Concretes
 
         protected override void Update()
         {
-            if (Input.GetMouseButtonDown(0) && FindObjectOfType<CharacterChangerController>().playerEnum == PlayerEnum.VILLIAN_CHARACTER_MODE && Time.time >= timeToFire)
+            if (Input.GetMouseButtonDown(0) && 
+                FindObjectOfType<CharacterChangerController>().playerEnum == PlayerEnum.VILLIAN_CHARACTER_MODE && 
+                Time.time >= timeToFire)
             { 
                 timeToFire = Time.time + 1/fireRate;
                 Spawn();

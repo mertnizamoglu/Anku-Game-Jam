@@ -9,13 +9,11 @@ namespace ANKU.Controllers.Concretes
     public class VillianCharacterController : PlayerController
     {
         [SerializeField] private GameObject gunController;
-        private IRayController _rayController;
         public GameObject GunController => gunController;
 
         protected override void Awake()
         {
             base.Awake();
-            _rayController = new RayController(this);
         }
 
         protected override void Start()
@@ -27,7 +25,6 @@ namespace ANKU.Controllers.Concretes
         protected override void Update()
         {
             base.Update();
-            _rayController.SendRay();
         }
     }
 }

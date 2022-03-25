@@ -15,6 +15,14 @@ namespace ANKU.Controllers.Abstracts
         [Space(20)]
         public PlayerEnum playerEnum;
 
+        private Vector3 _destination;
+
+        public Vector3 Destination
+        {
+            get => _destination;
+            set => value = _destination;
+        }
+
         protected virtual void Awake()
         {
             

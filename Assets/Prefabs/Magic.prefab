@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 4403305680058707436}
   - component: {fileID: 4403305680058707439}
   - component: {fileID: 4403305680058707438}
-  - component: {fileID: -7089130950197639269}
   m_Layer: 0
   m_Name: Magic
   m_TagString: Untagged
@@ -113,16 +112,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &-7089130950197639269
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4403305680058707433}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fafecd0034f5ad4db5b0811a8a3b08d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectMoveSpeed: 200

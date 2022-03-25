@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using ANKU.Controllers.Abstracts;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace ANKU.Controllers.Concretes
 {
@@ -19,14 +20,12 @@ namespace ANKU.Controllers.Concretes
             // TODO: Input System Mouse
 
             RaycastHit hit;
-            
-            
-            if (Physics.Raycast(_player.rayStartLocation.transform.position, 
-                    _player.transform.TransformDirection(_player.camera.transform.forward), 
-                        out hit ,100))
+
+            Ray ray = _player.camera.ScreenPointToRay(Mouse.current.position.ReadValue());
+
+            if (Physics.Raycast(ray, out hit, 100))
             {
-                Debug.DrawRay(_player.rayStartLocation.transform.position, 
-                    _player.transform.TransformDirection(_player.camera.transform.forward) * hit.distance, Color.green);
+                Debug.DrawRay(ray.origin, hit.point, Color.red);
             }
         }
     }

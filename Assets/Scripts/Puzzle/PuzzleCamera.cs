@@ -52,15 +52,15 @@ public class PuzzleCamera : MonoBehaviour
 
     void ControlPuzzleCamera()
     {
-        Debug.Log(Input.GetKey(KeyCode.E));
+        Debug.Log(Input.GetKeyDown(KeyCode.E));
 
-        if(InPuzzleArea && !puzzleMode && Input.GetKey(KeyCode.E))
+        if(InPuzzleArea && !puzzleMode && Input.GetKeyDown(KeyCode.E))
         {
             puzzleCamera.SetActive(true);
 
             puzzleMode = true;
         }
-        else if(InPuzzleArea && puzzleMode && Input.GetKey(KeyCode.E))
+        else if(InPuzzleArea && puzzleMode && Input.GetKeyDown(KeyCode.E))
         {
             puzzleCamera.SetActive(false);  
 
@@ -70,26 +70,26 @@ public class PuzzleCamera : MonoBehaviour
 
     void DeactivePlayerController()
     {
-        if(InPuzzleArea && !puzzleMode && Input.GetKey(KeyCode.E))
+        if(InPuzzleArea && !puzzleMode && Input.GetKeyDown(KeyCode.E))
         {
-            _firstPersonController.enabled = false;
+            _firstPersonController.enabled = true;
         }
-        else if(InPuzzleArea && puzzleMode && Input.GetKey(KeyCode.E))
+        else if(InPuzzleArea && puzzleMode && Input.GetKeyDown(KeyCode.E))
         {
-            _firstPersonController.enabled = true; 
+            _firstPersonController.enabled = false; 
         }
     }
 
     void ActivateMouseCursor()
     {
-        if(InPuzzleArea && !puzzleMode && Input.GetKey(KeyCode.E))
+        if(InPuzzleArea && !puzzleMode && Input.GetKeyDown(KeyCode.E))
         {
             
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
             
         }
-        else if(InPuzzleArea && puzzleMode && Input.GetKey(KeyCode.E))
+        else if(InPuzzleArea && puzzleMode && Input.GetKeyDown(KeyCode.E))
         {
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;

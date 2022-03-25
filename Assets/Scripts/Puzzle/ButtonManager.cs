@@ -34,8 +34,6 @@ public class ButtonManager : MonoBehaviour
     }
     private void Die()
     {
-        Debug.Log("yarra yedin");
-        
         foreach (var button in _buttons)
         {
             button.buttonState = false;

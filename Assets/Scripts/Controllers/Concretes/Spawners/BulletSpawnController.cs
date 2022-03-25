@@ -1,3 +1,4 @@
+using System;
 using ANKU.Controllers.Abstracts;
 using ANKU.Enums.Concretes;
 using UnityEngine;
@@ -32,12 +33,10 @@ namespace ANKU.Controllers.Concretes
 
         protected override void Update()
         {
-            if (_playerController.playerEnum == PlayerEnum.ANGEL_CHARACTER_MODE)
+            if (Input.GetMouseButtonDown(0) && FindObjectOfType<CharacterChangerController>().playerEnum == PlayerEnum.VILLIAN_CHARACTER_MODE)
             {
-                _canFire = false;
-                Debug.Log("ANGEL'A GIRDIM");
+                Spawn();
             }
-            if (_playerController.playerEnum == PlayerEnum.VILLIAN_CHARACTER_MODE) _canFire = true;
 
         }
 
@@ -54,11 +53,7 @@ namespace ANKU.Controllers.Concretes
         
         private void Fire(InputAction.CallbackContext context)
         {
-            Debug.Log("CAN FIRE: " + _canFire);
-            if (_canFire)
-            {
-                Spawn();
-            }
+       
         }
 
         private void OnDisable()

@@ -6,21 +6,25 @@ using UnityEngine;
 public class PuzzleCamera : MonoBehaviour
 {
     public bool InPuzzleArea;
+    public bool puzzleMode = false;
     public FirstPersonController _firstPersonController;
     public GameObject puzzleCamera;
     
-    void Start()
-    {
-        
-    }
-
     
     void Update()
     {
         ControlPuzzleCamera();
+
+        DeactivePlayerController();
+
+        ActivateMouseCursor();
+
+        Debug.Log("puzzleMode" + puzzleMode);
+
+        Debug.Log("puzzleArea" +InPuzzleArea);
     }
 
-    private void OnTriggerEnter(Collider other) 
+    private void OnTriggerStay(Collider other) 
     {
         if(other.CompareTag("Player"))
         {
@@ -30,6 +34,7 @@ public class PuzzleCamera : MonoBehaviour
         {
             InPuzzleArea = false;
         }
+        
     }
 
     private void OnTriggerExit(Collider other) 
@@ -42,33 +47,52 @@ public class PuzzleCamera : MonoBehaviour
         {
             InPuzzleArea = true;
         }
+        
     }
 
     void ControlPuzzleCamera()
     {
-        if(InPuzzleArea)
+        Debug.Log(Input.GetKey(KeyCode.E));
+
+        if(InPuzzleArea && !puzzleMode && Input.GetKey(KeyCode.E))
         {
             puzzleCamera.SetActive(true);
-            _firstPersonController.enabled = false;
-            
-            
+
+            puzzleMode = true;
         }
-        else
+        else if(InPuzzleArea && puzzleMode && Input.GetKey(KeyCode.E))
         {
             puzzleCamera.SetActive(false);  
-            _firstPersonController.enabled = true; 
+
+            puzzleMode = false;
         }
     }
 
     void DeactivePlayerController()
     {
-        if(InPuzzleArea)
+        if(InPuzzleArea && !puzzleMode && Input.GetKey(KeyCode.E))
         {
             _firstPersonController.enabled = false;
         }
-        else
+        else if(InPuzzleArea && puzzleMode && Input.GetKey(KeyCode.E))
         {
             _firstPersonController.enabled = true; 
+        }
+    }
+
+    void ActivateMouseCursor()
+    {
+        if(InPuzzleArea && !puzzleMode && Input.GetKey(KeyCode.E))
+        {
+            
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            
+        }
+        else if(InPuzzleArea && puzzleMode && Input.GetKey(KeyCode.E))
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 }

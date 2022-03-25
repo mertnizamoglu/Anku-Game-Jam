@@ -1,7 +1,5 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using StarterAssets;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -43,6 +41,7 @@ namespace ANKU.Controllers.Concretes
 
         private void Fire(InputAction.CallbackContext context)
         {
+            if (_currentAmmoCount <= 0) _currentAmmoCount = 0;
             _currentAmmoCount--;
             Debug.Log(_currentAmmoCount);
         }

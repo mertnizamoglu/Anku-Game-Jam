@@ -376,7 +376,7 @@ GameObject:
   - component: {fileID: 418632626}
   - component: {fileID: 418632627}
   m_Layer: 5
-  m_Name: CharacterChangeSlider
+  m_Name: VillianFormSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -467,7 +467,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69e4eb3f1b5f7d04c9ce6c3b7fb085f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeTime: 3
+  changeTime: 20
+  timeRangeBetweenForms: 4.8
+  formLevelsRange:
+  - 5
+  - 10
+  - 15
 --- !u!1 &542508511
 GameObject:
   m_ObjectHideFlags: 0

@@ -40,7 +40,7 @@ namespace ANKU.Controllers.Concretes
             }
         }
 
-        public void SpawnMagic(GameObject spawnObject, GameObject spawnPosition, float bulletSpeed)
+        public void SpawnMagic(GameObject spawnObject, GameObject spawnPosition, float bulletSpeed, float arcRange = 1)
         {
             Debug.Log(spawnObject.gameObject.name.ToString() + " spawned");
 
@@ -49,6 +49,7 @@ namespace ANKU.Controllers.Concretes
            
             spawnedObj.GetComponent<Rigidbody>().velocity =
                 (_hit.point - position).normalized * bulletSpeed;
+             iTween.PunchPosition(spawnedObj, new Vector3 (Random.Range(-arcRange, arcRange), Random.Range(-arcRange, arcRange), 0), Random.Range(0.5f, 2));
         }
     }
 }

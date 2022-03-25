@@ -25,7 +25,6 @@ namespace ANKU.Controllers.Concretes
             if (Physics.Raycast(ray, out _hit))
             {
                 _player.Destination = _hit.point;
-                Debug.Log(_hit.point);
                 Debug.DrawRay(ray.origin, _hit.point, Color.red);
             }
             else
@@ -44,11 +43,13 @@ namespace ANKU.Controllers.Concretes
         public void SpawnMagic(GameObject spawnObject, GameObject spawnPosition, float bulletSpeed)
         {
             Debug.Log(spawnObject.gameObject.name.ToString() + " spawned");
+
+            var position = spawnPosition.transform.position;
             
-            var spawnedObj = Instantiate(spawnObject, spawnPosition.transform.position, Quaternion.identity);
+            var spawnedObj = Instantiate(spawnObject, position, Quaternion.identity);
            
             spawnedObj.GetComponent<Rigidbody>().velocity =
-                (_hit.point - spawnPosition.transform.position).normalized * bulletSpeed;
+                (_hit.point - position).normalized * bulletSpeed;
         }
     }
 }

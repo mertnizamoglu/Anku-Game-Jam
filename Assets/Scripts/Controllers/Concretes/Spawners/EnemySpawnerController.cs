@@ -17,7 +17,6 @@ namespace ANKU.Controllers.Concretes
         {
             yield return new WaitForSeconds(spawnRate);
 
-            Debug.Log("I've been called!");
             StartCoroutine(Spawn());
         }
     }

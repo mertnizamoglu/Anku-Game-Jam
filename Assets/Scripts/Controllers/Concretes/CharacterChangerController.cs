@@ -10,7 +10,6 @@ namespace ANKU.Controllers.Concretes
     public class CharacterChangerController : MonoBehaviour
     {
         [SerializeField] private List<PlayerController> playerControllers;
-        [SerializeField] private VillianUI villianUI;
 
         [SerializeField] private PlayerEnum playerEnum;
 
@@ -37,18 +36,11 @@ namespace ANKU.Controllers.Concretes
 
         private void ChangeCharacter(InputAction.CallbackContext context)
         {
-            Debug.Log("CHARACTER CHANGED");
-            
             if(playerEnum == PlayerEnum.ANGEL_CHARACTER_MODE)
             {
                 playerEnum++;
                 SetComponentVisibilities(0, false);
                 SetComponentVisibilities(1, true);
-                
-                SetComponentVisibilities(true);
-                
-                if(playerControllers[1].GetComponent<VillianCharacterController>().GunController == null) return;
-                playerControllers[1].GetComponent<VillianCharacterController>().GunController.gameObject.SetActive(true);
                 
             }
             else if(playerEnum == PlayerEnum.VILLIAN_CHARACTER_MODE)
@@ -56,22 +48,12 @@ namespace ANKU.Controllers.Concretes
                 playerEnum--;
                 SetComponentVisibilities(0, true);
                 SetComponentVisibilities(1, false);
-                
-                SetComponentVisibilities(false);
-                
-                if(playerControllers[1].GetComponent<VillianCharacterController>().GunController == null) return;
-                playerControllers[1].GetComponent<VillianCharacterController>().GunController.gameObject.SetActive(false);
             }
         }
 
         private void SetComponentVisibilities(int index, bool situation)
         {
             playerControllers[index].enabled = situation;
-            
         } 
-        private void SetComponentVisibilities(bool situation)
-        {
-            villianUI.gameObject.SetActive(situation);
-        }
     }
 }

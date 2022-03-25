@@ -1,13 +1,11 @@
 using System.Collections.Generic;
-using ANKU.Concretes.Enums;
+using ANKU.Enums.Concretes;
 using ANKU.Controllers.Abstracts;
-using ANKU.Controllers.Concretes;
 using ANKU.UIs.Concretes;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Rendering.UI;
 
-namespace ANKU.Concretes.Controllers
+namespace ANKU.Controllers.Concretes
 {
     public class CharacterChangerController : MonoBehaviour
     {

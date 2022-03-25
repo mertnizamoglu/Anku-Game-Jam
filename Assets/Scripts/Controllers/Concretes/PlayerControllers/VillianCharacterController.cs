@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using ANKU.Concretes.Enums;
+using ANKU.Enums.Concretes;
 using ANKU.Controllers.Abstracts;
 using UnityEngine;
 

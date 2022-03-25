@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace ANKU.Concretes.Enums
+namespace ANKU.Enums.Concretes
 {
     public enum PlayerEnum 
     {

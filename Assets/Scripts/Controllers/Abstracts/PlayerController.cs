@@ -1,4 +1,4 @@
-using ANKU.Concretes.Enums;
+using ANKU.Enums.Concretes;
 using ANKU.Controllers.Concretes;
 using ANKU.UIs.Concretes;
 using UnityEngine;

@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using StarterAssets;
 using UnityEngine;
 
 public class PuzzleCamera : MonoBehaviour
 {
     public bool InPuzzleArea;
+    public FirstPersonController _firstPersonController;
     public GameObject puzzleCamera;
+    
     void Start()
     {
         
@@ -46,11 +49,26 @@ public class PuzzleCamera : MonoBehaviour
         if(InPuzzleArea)
         {
             puzzleCamera.SetActive(true);
+            _firstPersonController.enabled = false;
+            
+            
         }
         else
         {
-            puzzleCamera.SetActive(false);   
+            puzzleCamera.SetActive(false);  
+            _firstPersonController.enabled = true; 
         }
     }
 
+    void DeactivePlayerController()
+    {
+        if(InPuzzleArea)
+        {
+            _firstPersonController.enabled = false;
+        }
+        else
+        {
+            _firstPersonController.enabled = true; 
+        }
+    }
 }

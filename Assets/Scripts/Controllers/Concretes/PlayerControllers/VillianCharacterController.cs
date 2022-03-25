@@ -12,7 +12,7 @@ namespace ANKU.Controllers.Concretes
         protected override void Awake()
         {
             base.Awake();
-            _rayController = new RayController();
+            _rayController = new RayController(this);
         }
 
         protected override void Start()
@@ -23,7 +23,6 @@ namespace ANKU.Controllers.Concretes
         protected override void Update()
         {
             base.Update();
-            // TODO: Input System Mouse
             _rayController.SendRay();
         }
     }

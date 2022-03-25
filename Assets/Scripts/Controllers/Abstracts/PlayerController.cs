@@ -1,11 +1,14 @@
 using System;
 using ANKU.Controllers.Abstracts;
 using UnityEngine;
+using Vector3 = System.Numerics.Vector3;
 
 namespace ANKU.Controllers.Abstracts
 {
     public abstract class PlayerController : MonoBehaviour
     {
+        public GameObject rayStartLocation;
+        public Camera camera;
 
         protected virtual void Awake()
         {

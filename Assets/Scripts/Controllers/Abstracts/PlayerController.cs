@@ -1,13 +1,18 @@
-using System;
-using ANKU.Controllers.Abstracts;
+using ANKU.Concretes.Enums;
+using ANKU.UIs.Concretes;
 using UnityEngine;
-using Vector3 = System.Numerics.Vector3;
 
 namespace ANKU.Controllers.Abstracts
 {
     public abstract class PlayerController : MonoBehaviour
     {
+        [Header("RAYCAST CONTROL")]
+        [Space(20)]
         public Camera camera;
+        public CrosshairUI crosshairUI;
+        [Header("MODE")]
+        [Space(20)]
+        public PlayerEnum playerEnum;
 
         protected virtual void Awake()
         {
@@ -23,5 +28,6 @@ namespace ANKU.Controllers.Abstracts
         {
             
         }
+
     }
 }

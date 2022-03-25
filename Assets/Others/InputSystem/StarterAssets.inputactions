@@ -42,9 +42,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Deneme",
+                    "name": "ChangeCharacter",
                     "type": "Button",
-                    "id": "7a76c586-2a30-4381-a2ae-ac441d58333f",
+                    "id": "00419796-103a-4800-b26b-25ea66cf66b4",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -230,12 +230,12 @@
                 },
                 {
                     "name": "",
-                    "id": "959c80a7-7cf8-46e9-9eda-6fd8e784150b",
-                    "path": "<Keyboard>/a",
-                    "interactions": "",
+                    "id": "1fedd478-f985-4d23-853d-f16cb101ae50",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "KeyboardMouse",
-                    "action": "Deneme",
+                    "action": "ChangeCharacter",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using ANKU.Controllers.Abstracts;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 namespace ANKU.Controllers.Concretes
 {
@@ -14,7 +15,7 @@ namespace ANKU.Controllers.Concretes
         {
             _player = player;
         }
-        
+
         public void SendRay()
         {
             // TODO: Input System Mouse
@@ -26,6 +27,13 @@ namespace ANKU.Controllers.Concretes
             if (Physics.Raycast(ray, out hit, 100))
             {
                 Debug.DrawRay(ray.origin, hit.point, Color.red);
+            }
+            
+            if (hit.collider.gameObject.Equals(null)) return;
+            
+            if (hit.collider.gameObject.CompareTag("Enemy"))
+            {
+                _player.crosshairUI.GetComponent<Image>().color = Color.red;
             }
         }
     }

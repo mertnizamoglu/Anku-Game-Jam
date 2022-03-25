@@ -1249,7 +1249,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2130703189
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3471,9 +3471,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f31349292e0ce81409f044f76e0f5d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerControllers:
+  playerControllers:
   - {fileID: 4416926083347132230}
   - {fileID: 236799939}
+  villianUI: {fileID: 2130703190}
   playerEnum: 0
 --- !u!114 &4416926083347132230
 MonoBehaviour:

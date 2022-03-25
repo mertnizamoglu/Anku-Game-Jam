@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using ANKU.Concretes.Enums;
 using ANKU.Controllers.Abstracts;
 using ANKU.Controllers.Concretes;
+using ANKU.UIs.Concretes;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering.UI;
@@ -10,7 +11,8 @@ namespace ANKU.Concretes.Controllers
 {
     public class CharacterChangerController : MonoBehaviour
     {
-        [SerializeField] private List<PlayerController> _playerControllers;
+        [SerializeField] private List<PlayerController> playerControllers;
+        [SerializeField] private VillianUI villianUI;
 
         [SerializeField] private PlayerEnum playerEnum;
 
@@ -45,8 +47,10 @@ namespace ANKU.Concretes.Controllers
                 SetComponentVisibilities(0, false);
                 SetComponentVisibilities(1, true);
                 
-                if(_playerControllers[1].GetComponent<VillianCharacterController>().GunController == null) return;
-                _playerControllers[1].GetComponent<VillianCharacterController>().GunController.gameObject.SetActive(true);
+                SetComponentVisibilities(true);
+                
+                if(playerControllers[1].GetComponent<VillianCharacterController>().GunController == null) return;
+                playerControllers[1].GetComponent<VillianCharacterController>().GunController.gameObject.SetActive(true);
                 
             }
             else if(playerEnum == PlayerEnum.VILLIAN_CHARACTER_MODE)
@@ -55,15 +59,21 @@ namespace ANKU.Concretes.Controllers
                 SetComponentVisibilities(0, true);
                 SetComponentVisibilities(1, false);
                 
-                if(_playerControllers[1].GetComponent<VillianCharacterController>().GunController == null) return;
-                _playerControllers[1].GetComponent<VillianCharacterController>().GunController.gameObject.SetActive(false);
+                SetComponentVisibilities(false);
+                
+                if(playerControllers[1].GetComponent<VillianCharacterController>().GunController == null) return;
+                playerControllers[1].GetComponent<VillianCharacterController>().GunController.gameObject.SetActive(false);
             }
         }
 
         private void SetComponentVisibilities(int index, bool situation)
         {
-            _playerControllers[index].enabled = situation;
+            playerControllers[index].enabled = situation;
             
+        } 
+        private void SetComponentVisibilities(bool situation)
+        {
+            villianUI.gameObject.SetActive(situation);
         }
     }
 }

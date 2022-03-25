@@ -17,6 +17,7 @@ namespace ANKU.Controllers.Concretes
         {
             yield return new WaitForSeconds(spawnRate);
 
+            Instantiate(spawnObject, this.transform.position, Quaternion.identity);
             StartCoroutine(Spawn());
         }
     }

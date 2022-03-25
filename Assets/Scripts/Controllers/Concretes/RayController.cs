@@ -45,7 +45,6 @@ namespace ANKU.Controllers.Concretes
             Debug.Log(spawnObject.gameObject.name.ToString() + " spawned");
 
             var position = spawnPosition.transform.position;
-            
             var spawnedObj = Instantiate(spawnObject, position, Quaternion.identity);
            
             spawnedObj.GetComponent<Rigidbody>().velocity =

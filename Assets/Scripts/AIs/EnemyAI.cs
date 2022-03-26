@@ -5,11 +5,13 @@ using ANKU.Animations.Abstracts;
 using ANKU.Animations.Concretes;
 using ANKU.Combats.Concretes;
 using ANKU.Controllers.Concretes;
+using ANKU.Managers.Concretes;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
+    
     private CharacterChangerController _player;
     private NavMeshAgent _navMeshAgent;
     
@@ -41,6 +43,7 @@ public class EnemyAI : MonoBehaviour
         if (Vector3.Distance(_player.transform.position, transform.position) <= _navMeshAgent.stoppingDistance)
         {
             _animation.PlayAttackAnimation(true);
+            SoundManager.Instance.PlayGhostHitSound();
             this.transform.LookAt(_player.transform);
         }
     }

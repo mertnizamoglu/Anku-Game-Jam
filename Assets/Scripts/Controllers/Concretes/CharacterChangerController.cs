@@ -4,6 +4,7 @@ using ANKU.Combats.Abstracts;
 using ANKU.Combats.Concretes;
 using ANKU.Enums.Concretes;
 using ANKU.Controllers.Abstracts;
+using ANKU.Managers.Concretes;
 using ANKU.UIs.Concretes;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -56,20 +57,29 @@ namespace ANKU.Controllers.Concretes
 
         private void ChangeCharacter(InputAction.CallbackContext context)
         {
+            if (playerEnum == PlayerEnum.VILLIAN_CHARACTER_MODE)
+            {
+                SoundManager.Instance.PlayVillianModeCountSound(true);
+            }
+            
             if(playerEnum == PlayerEnum.ANGEL_CHARACTER_MODE)
             {
                 playerEnum++;
                 SetComponentVisibilities(0, false);
                 SetComponentVisibilities(1, true);
                 
+                SoundManager.Instance.PlayVillianModeCountSound(true);
+                
                 hand.GetComponent<Animator>().SetBool("hand", false);
                 
             }
+            
             else if(playerEnum == PlayerEnum.VILLIAN_CHARACTER_MODE)
             {
                 playerEnum--;
                 SetComponentVisibilities(0, true);
                 SetComponentVisibilities(1, false);
+                SoundManager.Instance.PlayVillianModeCountSound(false);
                 hand.GetComponent<Animator>().SetBool("hand", true);
             }
         }

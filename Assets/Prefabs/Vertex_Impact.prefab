@@ -14597,6 +14597,7 @@ GameObject:
   - component: {fileID: 3273826101171882861}
   - component: {fileID: 2831838137513857652}
   - component: {fileID: 748035751319555966}
+  - component: {fileID: 4608849574666860006}
   m_Layer: 0
   m_Name: Vertex_Impact
   m_TagString: Bullet
@@ -14650,3 +14651,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4608849574666860006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7647929827755953164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d302da3ea1a47bc4cb13ef0d837dc78c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

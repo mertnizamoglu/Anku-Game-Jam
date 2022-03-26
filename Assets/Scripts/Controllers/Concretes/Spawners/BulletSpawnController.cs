@@ -1,6 +1,7 @@
 using System;
 using ANKU.Controllers.Abstracts;
 using ANKU.Enums.Concretes;
+using ANKU.Managers.Concretes;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -46,6 +47,7 @@ namespace ANKU.Controllers.Concretes
             { 
                 timeToFire = Time.time + 1/fireRate;
                 Spawn();
+                SoundManager.Instance.PlayMagicFireSound();
             }
 
         }

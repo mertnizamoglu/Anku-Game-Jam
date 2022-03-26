@@ -21,25 +21,18 @@ namespace ANKU.Controllers.Concretes
 
         public void SendRay()
         {
-            
             Ray ray = _player.camera.ScreenPointToRay(Mouse.current.position.ReadValue());
 
             if (Physics.Raycast(ray, out _hit))
             {
                 _player.Destination = _hit.point;
-                Debug.DrawRay(ray.origin, _hit.point, Color.red);
-            }
-            else
-            {
-                _player.Destination = ray.GetPoint(1000);
-            }
-            
-            if (_hit.collider.gameObject.Equals(null)) return;
-            
-            if (_hit.collider.gameObject.CompareTag("Enemy"))
-            {
-                FindObjectOfType<CrosshairUI>().GetComponent<Image>().color = Color.red;
-                _hit.collider.gameObject.GetComponent<HealthCombat>().TakeDamage(20.0f);
+                Debug.DrawRay(ray.origin, _hit.point, Color.red);    
+                
+                if (_hit.collider.gameObject.CompareTag("Enemy"))
+                {
+                    FindObjectOfType<CrosshairUI>().GetComponent<Image>().color = Color.red;
+                    _hit.collider.gameObject.GetComponent<HealthCombat>().TakeDamage(20.0f);
+                }
             }
         }
 

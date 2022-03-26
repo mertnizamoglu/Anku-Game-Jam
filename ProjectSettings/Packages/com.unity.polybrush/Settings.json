@@ -121,7 +121,11 @@
             {
                 "type": "UnityEditor.Polybrush.PrefabLoadout, Unity.Polybrush.Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
                 "key": "ScatteringEditor.userLoadout",
+<<<<<<< Updated upstream
                 "value": "{\"m_Value\":{\"infos\":[{\"palette\":{\"fileID\":11400000,\"guid\":\"041fba0718768b24c8678f64dbd73679\",\"type\":2},\"prefab\":{\"fileID\":7073794631392840680,\"guid\":\"fbe495dfa18adcf41b00768f6b40d77c\",\"type\":3}},{\"palette\":{\"fileID\":11400000,\"guid\":\"041fba0718768b24c8678f64dbd73679\",\"type\":2},\"prefab\":{\"fileID\":7589337141206689172,\"guid\":\"eff3b7e3bcfe1e745b6231ef08270038\",\"type\":3}},{\"palette\":{\"fileID\":11400000,\"guid\":\"041fba0718768b24c8678f64dbd73679\",\"type\":2},\"prefab\":{\"fileID\":3030584710951292087,\"guid\":\"e2ab612e8579cac419ed3f4041248c4e\",\"type\":3}},{\"palette\":{\"fileID\":11400000,\"guid\":\"041fba0718768b24c8678f64dbd73679\",\"type\":2},\"prefab\":{\"fileID\":8262021559908336980,\"guid\":\"ec416e7188c84174c8c283115d51bdf4\",\"type\":3}},{\"palette\":{\"fileID\":11400000,\"guid\":\"041fba0718768b24c8678f64dbd73679\",\"type\":2},\"prefab\":{\"fileID\":725648751757754021,\"guid\":\"51c26d692a6f9e24fb9372f4b35e5281\",\"type\":3}}]}}"
+=======
+                "value": "{\"m_Value\":{\"infos\":[{\"palette\":{\"fileID\":11400000,\"guid\":\"c99197ee4204b2c4c9eadfcd219ef38f\",\"type\":2},\"prefab\":{\"fileID\":7589337141206689172,\"guid\":\"eff3b7e3bcfe1e745b6231ef08270038\",\"type\":3}},{\"palette\":{\"fileID\":11400000,\"guid\":\"c99197ee4204b2c4c9eadfcd219ef38f\",\"type\":2},\"prefab\":{\"fileID\":7073794631392840680,\"guid\":\"fbe495dfa18adcf41b00768f6b40d77c\",\"type\":3}},{\"palette\":{\"fileID\":11400000,\"guid\":\"c99197ee4204b2c4c9eadfcd219ef38f\",\"type\":2},\"prefab\":{\"fileID\":3030584710951292087,\"guid\":\"e2ab612e8579cac419ed3f4041248c4e\",\"type\":3}},{\"palette\":{\"fileID\":11400000,\"guid\":\"c99197ee4204b2c4c9eadfcd219ef38f\",\"type\":2},\"prefab\":{\"fileID\":8262021559908336980,\"guid\":\"ec416e7188c84174c8c283115d51bdf4\",\"type\":3}}]}}"
+>>>>>>> Stashed changes
             }
         ]
     }

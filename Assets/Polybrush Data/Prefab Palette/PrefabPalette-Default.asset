@@ -47,7 +47,11 @@ MonoBehaviour:
     name: Tree2_With_Peddles
   - gameObject: {fileID: 3030584710951292087, guid: e2ab612e8579cac419ed3f4041248c4e, type: 3}
     settings:
+<<<<<<< Updated upstream
       m_Strength: 27.12185
+=======
+      m_Strength: 24.984535
+>>>>>>> Stashed changes
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}

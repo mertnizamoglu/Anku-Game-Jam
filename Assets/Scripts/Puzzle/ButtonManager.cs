@@ -12,13 +12,17 @@ public class ButtonManager : MonoBehaviour
     public int winCounter;
     public GameObject[] _winObjects;
     public bool mistakenState;
-    public int ClickedHitButtonIndex;
+    public int ClickedHitButtonIndex = 0;
     public bool winPuzzle;
+    public int buttonCount;
 
     // private event System.Action<int> OnButtonClicked;
     private void Start()
     {
         winCounter = _winObjects.Length;
+
+        buttonCount = _buttons.Count;
+
         Debug.Log("winCounter: "  +winCounter);
     }
     private void Update()
@@ -52,7 +56,7 @@ public class ButtonManager : MonoBehaviour
     
     public void ResetAllButtonStates()
     {
-        for(int i = 0; i<9; i++)
+        for(int i = 0; i<buttonCount; i++)
         {
             _buttons[i].buttonState = false;
         }
@@ -64,7 +68,7 @@ public class ButtonManager : MonoBehaviour
     {
         counter = 0;
 
-        for(int j=0; j<9; j++)
+        for(int j=0; j<buttonCount; j++)
         {
             if(_buttons[j].CompareTag("HitButton") && _buttons[j].buttonState == true)
             {

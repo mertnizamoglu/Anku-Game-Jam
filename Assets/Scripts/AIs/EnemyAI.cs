@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using ANKU.Animations.Abstracts;
@@ -9,7 +10,7 @@ using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
-    [SerializeField] private GameObject _player;
+    private CharacterChangerController _player;
     private NavMeshAgent _navMeshAgent;
     
     private Animator _animator;
@@ -22,8 +23,15 @@ public class EnemyAI : MonoBehaviour
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _animation = new EnemyAnimation(_animator);
     }
+
+    private void Start()
+    {
+        _player = FindObjectOfType<CharacterChangerController>();
+    }
+
     private void Update()
     {
+        if(_player.Equals(null)) return;
         if (Vector3.Distance(_player.transform.position, transform.position) >= _navMeshAgent.stoppingDistance)
         {
             _animation.PlayAttackAnimation(false);

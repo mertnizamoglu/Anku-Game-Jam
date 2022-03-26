@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using ANKU.Combats.Concretes;
 using ANKU.Controllers.Abstracts;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -37,6 +38,7 @@ namespace ANKU.Controllers.Concretes
             if (_hit.collider.gameObject.CompareTag("Enemy"))
             {
                 _player.crosshairUI.GetComponent<Image>().color = Color.red;
+                _hit.collider.gameObject.GetComponent<HealthCombat>().TakeDamage(20.0f);
             }
         }
 

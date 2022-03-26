@@ -45,6 +45,7 @@ public class ButtonManager : MonoBehaviour
             }
         }
     }
+    
     private void Die()
     {
         foreach (var button in _buttons)
@@ -66,5 +67,4 @@ public class ButtonManager : MonoBehaviour
             }
         }
     }
-
 }

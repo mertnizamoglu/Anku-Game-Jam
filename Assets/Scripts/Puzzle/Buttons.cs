@@ -54,9 +54,4 @@ public class Buttons : MonoBehaviour
             _buttonManager.mistakenState = true;
         }
     }
-
-    
-
-
-
 }

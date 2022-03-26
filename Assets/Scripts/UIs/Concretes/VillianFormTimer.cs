@@ -26,15 +26,11 @@ namespace ANKU.UIs.Concretes
         
         private float _currentFormTime;
         private int _currentLevelIndex;
-        private int _totalLevelIndex;
-        private int _intFormLevel;
-        private bool _isFormLevelChanged;
         private bool IsReachedMaxFormLevel => _currentLevelIndex == totalFormLevels ? true : false;
 
         private void Start()
         {            
             _slider = GetComponent<Slider>();
-            _totalLevelIndex = totalFormLevels;
         }
 
         private void Update()

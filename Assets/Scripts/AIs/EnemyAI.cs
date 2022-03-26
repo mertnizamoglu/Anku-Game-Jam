@@ -1,107 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
+using ANKU.Combats.Concretes;
+using ANKU.Controllers.Concretes;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
-    public NavMeshAgent _agent;
-    public Transform _player;
-    public LayerMask ground;
-    public LayerMask player;
-    public Vector3 destinationPoint;
-    public GameObject sphere;
-    public bool destinationPointSet;
-    private bool alreadyAttacked;
-    public bool playerInSightRange;
-    public bool playerInAttackRange;
-    public float timeBetweenAttacks;
-    public float walkPointRange;
-    public float sightRange;
-    public float attackRange;
-
-    private void Awake() 
+    [SerializeField] private GameObject _player;
+    private NavMeshAgent _navMeshAgent;
+    private void Awake()
     {
-        _agent = GetComponent<NavMeshAgent>();
+        _navMeshAgent = GetComponent<NavMeshAgent>();
     }
-
-    private void Update() 
+    private void Update()
     {
-        playerInSightRange = Physics.CheckSphere(transform.position,sightRange,player);
-        playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, player);
-
-        if(!playerInSightRange && !playerInAttackRange )
+        if (Vector3.Distance(_player.transform.position, transform.position) >= _navMeshAgent.stoppingDistance)
         {
-            Patrol();
+            _navMeshAgent.destination = _player.transform.position;
         }
 
-        if(playerInSightRange && !playerInAttackRange)
+        if (Vector3.Distance(_player.transform.position, transform.position) <= _navMeshAgent.stoppingDistance)
         {
-            ChasePlayer();
-        }
-
-        if(playerInSightRange && playerInAttackRange)
-        {
-            AttackPlayer();
+            this.transform.LookAt(_player.transform);
         }
     }
-
-    void Patrol()
-    {
-        if(!destinationPointSet)
-        {
-            SearchWalkPoint();
-        }
-        
-        if(destinationPointSet)
-        {
-            _agent.SetDestination(destinationPoint);
-        }
-
-        Vector3 distanceToDestinationPoint = transform.position - destinationPoint;
-
-        if(distanceToDestinationPoint.magnitude < 1.0f)
-        {
-            destinationPointSet = false;
-        }
-    }
-
-    void ChasePlayer()
-    {
-        _agent.SetDestination(_player.position);
-    }
-    void  AttackPlayer()
-    {
-        _agent.SetDestination(transform.position);
-
-        transform.LookAt(_player);
-
-        if(!alreadyAttacked)
-        {
-            //logic
-            alreadyAttacked = true;
-        }
-        
-    }
-    void SearchWalkPoint()
-    {
-        float randomX = UnityEngine.Random.Range(-walkPointRange, walkPointRange);
-        float randomZ = UnityEngine.Random.Range(-walkPointRange, walkPointRange);
-
-        destinationPoint = new Vector3(transform.position.x + randomX , transform.position.y , transform.position.z + randomZ);
-
-        if(Physics.Raycast(destinationPoint, -transform.up, 2.0f, ground))
-        {
-            destinationPointSet = true;
-        }
-
-    }
-
-    void ResetAttack()
-    {
-        alreadyAttacked = false;
-    }
-
-
-
 }

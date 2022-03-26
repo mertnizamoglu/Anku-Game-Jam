@@ -1,4 +1,7 @@
+using System;
 using System.Collections.Generic;
+using ANKU.Combats.Abstracts;
+using ANKU.Combats.Concretes;
 using ANKU.Enums.Concretes;
 using ANKU.Controllers.Abstracts;
 using ANKU.UIs.Concretes;
@@ -10,9 +13,10 @@ namespace ANKU.Controllers.Concretes
     public class CharacterChangerController : MonoBehaviour
     {
         [SerializeField] private List<PlayerController> playerControllers;
-
         [SerializeField] public PlayerEnum playerEnum;
+        private float currentHealth;
 
+        public IHealth health;
         public MyInputActions inputActions; 
         
         private InputAction _changeCharacter;
@@ -20,6 +24,7 @@ namespace ANKU.Controllers.Concretes
         private void Awake()
         {
             inputActions = new MyInputActions();
+            health = GetComponent<HealthCombat>();
         }
 
         private void OnEnable()
@@ -32,6 +37,15 @@ namespace ANKU.Controllers.Concretes
         private void OnDisable()
         {
             _changeCharacter.Disable();
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("AttackHand"))
+            {
+                this.gameObject.GetComponent<HealthCombat>().TakeDamage(20);
+                Debug.Log(this.gameObject.GetComponent<HealthCombat>().CurrentHealth);
+            }
         }
 
         private void ChangeCharacter(InputAction.CallbackContext context)

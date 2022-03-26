@@ -165,7 +165,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 68267900}
   spawnObject: {fileID: 4582770131668111314, guid: 3e2f899f60b61204cadcee8d21b27aca, type: 3}
-  difficulty: 2
 --- !u!4 &68267902
 Transform:
   m_ObjectHideFlags: 0
@@ -475,6 +474,7 @@ MonoBehaviour:
   timeToSpendInFormLevel: 5
   characterChanger: {fileID: 4416926083347132229}
   _levelText: {fileID: 951496616}
+  _difficultyIndex: 2
 --- !u!1 &542508511
 GameObject:
   m_ObjectHideFlags: 0
@@ -666,7 +666,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 557389194}
   spawnObject: {fileID: 4582770131668111314, guid: 3e2f899f60b61204cadcee8d21b27aca, type: 3}
-  difficulty: 2
 --- !u!4 &557389196
 Transform:
   m_ObjectHideFlags: 0
@@ -1335,6 +1334,66 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentHealth: 100
+--- !u!1 &1557029169
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1557029172}
+  - component: {fileID: 1557029171}
+  - component: {fileID: 1557029170}
+  m_Layer: 0
+  m_Name: SpawnZone (2)
+  m_TagString: SpawnZone
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1557029170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557029169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7251ef0867d08714889b043db4245dd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoints:
+  - {fileID: 557389195}
+  - {fileID: 1856535975}
+--- !u!65 &1557029171
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557029169}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1557029172
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557029169}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.87, z: -27.42}
+  m_LocalScale: {x: 12.545, y: 1, z: 1.7193}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1618409599
 GameObject:
   m_ObjectHideFlags: 0
@@ -1565,7 +1624,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1856535974}
   spawnObject: {fileID: 4582770131668111314, guid: 3e2f899f60b61204cadcee8d21b27aca, type: 3}
-  difficulty: 2
 --- !u!4 &1856535976
 Transform:
   m_ObjectHideFlags: 0

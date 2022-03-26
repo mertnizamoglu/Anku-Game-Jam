@@ -468,7 +468,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalFormLevels: 3
-  timeToSpendInFormLevel: 2
+  timeToSpendInFormLevel: 15
   characterChanger: {fileID: 1439813405}
   _levelText: {fileID: 951496616}
 --- !u!1 &542508511

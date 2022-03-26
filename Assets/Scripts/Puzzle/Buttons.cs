@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using ANKU.Managers.Concretes;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -52,6 +53,7 @@ public class Buttons : MonoBehaviour
         if(this.gameObject.CompareTag("NotHitButton") && buttonState == true )
         {
             _buttonManager.mistakenState = true;
+            SoundManager.Instance.PlayPuzzleFailSound();
         }
     }
 }

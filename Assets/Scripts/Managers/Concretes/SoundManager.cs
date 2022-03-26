@@ -13,6 +13,7 @@ namespace ANKU.Managers.Concretes
         [SerializeField] private AudioSource ghostHitSound;
         [SerializeField] private AudioSource villianModeCounterSound;
         [SerializeField] private AudioSource magicFireSound;
+        [SerializeField] private AudioSource puzzleFailSound;
 
 
         private bool _isGhostHitPlayed = false;
@@ -36,7 +37,6 @@ namespace ANKU.Managers.Concretes
 
         public void PlayGhostHitSound()
         {
-            
             if(ghostHitSound.isPlaying) return;
             ghostHitSound.pitch = Random.Range(1, 2);
             ghostHitSound.PlayDelayed(.3f);
@@ -55,6 +55,16 @@ namespace ANKU.Managers.Concretes
             magicFireSound.pitch = Random.Range(1.0f, 2.0f);
             magicFireSound.Play();
         }
-    
+
+        public void PlayPuzzleFailSound()
+        {
+            if(puzzleFailSound.isPlaying) return;
+            puzzleFailSound.Play();
+        }
+
+        public void PlayPuzzleSuccessSound()
+        {
+            
+        }
     }
 }

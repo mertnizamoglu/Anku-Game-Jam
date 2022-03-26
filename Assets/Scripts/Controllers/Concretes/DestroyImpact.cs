@@ -8,7 +8,7 @@ namespace ANKU.Controllers.Concretes
     
     public class DestroyImpact : MonoBehaviour
     {
-        private void Start()
+        private void Update()
         {
             Destroy(this, 5.0f);
         }

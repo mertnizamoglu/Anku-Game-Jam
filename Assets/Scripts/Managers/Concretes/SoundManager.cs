@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using ANKU.Controllers.Concretes;
 using ANKU.Enums.Concretes;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace ANKU.Managers.Concretes
 {
@@ -14,14 +16,16 @@ namespace ANKU.Managers.Concretes
         [SerializeField] private AudioSource villianModeCounterSound;
         [SerializeField] private AudioSource magicFireSound;
         [SerializeField] private AudioSource puzzleFailSound;
+        
+        [SerializeField] private AudioSource villianBGMusic;
+        [SerializeField] private AudioSource angelBGMusic;
 
-
-        private bool _isGhostHitPlayed = false;
         
         private void Awake()
         {
             SingletonObject();
         }
+        
         private void SingletonObject()
         {
             if (Instance == null)
@@ -34,6 +38,7 @@ namespace ANKU.Managers.Concretes
                 Destroy(this.gameObject);
             }
         }
+
 
         public void PlayGhostHitSound()
         {
@@ -65,6 +70,23 @@ namespace ANKU.Managers.Concretes
         public void PlayPuzzleSuccessSound()
         {
             
+        }
+
+        public void PlayVillianSound()
+        {
+            villianBGMusic.Play();
+        }
+        public void PlayAngelSound()
+        {
+            angelBGMusic.Play();
+        }
+        public void StopVillianSound()
+        {
+            villianBGMusic.Stop();
+        }
+        public void StopAngelSound()
+        {
+            angelBGMusic.Stop();
         }
     }
 }

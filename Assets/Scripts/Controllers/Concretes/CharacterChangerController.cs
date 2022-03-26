@@ -14,6 +14,7 @@ namespace ANKU.Controllers.Concretes
     {
         [SerializeField] private List<PlayerController> playerControllers;
         [SerializeField] public PlayerEnum playerEnum;
+        [SerializeField] private GameObject hand;
         private float currentHealth;
 
         public IHealth health;
@@ -32,6 +33,11 @@ namespace ANKU.Controllers.Concretes
             _changeCharacter = inputActions.Player.ChangeCharacter;
             _changeCharacter.Enable();
             _changeCharacter.performed += ChangeCharacter;
+        }
+
+        private void Start()
+        {
+            hand.GetComponent<Animator>().SetBool("hand", true);
         }
 
         private void OnDisable()
@@ -56,12 +62,15 @@ namespace ANKU.Controllers.Concretes
                 SetComponentVisibilities(0, false);
                 SetComponentVisibilities(1, true);
                 
+                hand.GetComponent<Animator>().SetBool("hand", false);
+                
             }
             else if(playerEnum == PlayerEnum.VILLIAN_CHARACTER_MODE)
             {
                 playerEnum--;
                 SetComponentVisibilities(0, true);
                 SetComponentVisibilities(1, false);
+                hand.GetComponent<Animator>().SetBool("hand", true);
             }
         }
 

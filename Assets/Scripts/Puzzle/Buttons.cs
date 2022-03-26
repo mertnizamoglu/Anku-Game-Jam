@@ -39,14 +39,12 @@ public class Buttons : MonoBehaviour
 
     public void SetButtonIndex()
     {
-        if(this.gameObject.CompareTag("HitButton"))
+        if(this.gameObject.CompareTag("HitButton") && buttonState == false)
         {
             _buttonManager.ClickedHitButtonIndex = Int32.Parse(this.gameObject.name.ToString());
-            
-            Debug.Log("my index:" + _buttonManager.ClickedHitButtonIndex);
-        }
 
-        
+            Debug.Log("my index:" + _buttonManager.ClickedHitButtonIndex);
+        }   
     }
 
     public void CheckTagOnClick()

@@ -13,11 +13,13 @@ public class ButtonManager : MonoBehaviour
     public GameObject[] _winObjects;
     public bool mistakenState;
     public int ClickedHitButtonIndex;
+    public bool winPuzzle;
 
     // private event System.Action<int> OnButtonClicked;
     private void Start()
     {
         winCounter = _winObjects.Length;
+        Debug.Log("winCounter: "  +winCounter);
     }
     private void Update()
     {
@@ -29,13 +31,15 @@ public class ButtonManager : MonoBehaviour
             ResetAllButtonStates();
         }
 
+        CheckWinStatus();
+
+        Debug.Log("win puzzle status:" + winPuzzle);
+        Debug.Log("counter:" + counter);
 
     }
 
     private void ControlButtonsOrder()
-    {
-        
-            
+    {      
         for (int i = 0; i < ClickedHitButtonIndex; i++)
         {
             if(_buttons[i].CompareTag("HitButton") && _buttons[i].buttonState == false)
@@ -54,7 +58,24 @@ public class ButtonManager : MonoBehaviour
         }
 
         mistakenState = false;
+    }
 
+    public void CheckWinStatus()
+    {
+        counter = 0;
+
+        for(int j=0; j<9; j++)
+        {
+            if(_buttons[j].CompareTag("HitButton") && _buttons[j].buttonState == true)
+            {
+                counter++;
+            }
+        }
+
+        if(counter == winCounter)
+        {
+            winPuzzle = true;
+        }
     }
 }
 

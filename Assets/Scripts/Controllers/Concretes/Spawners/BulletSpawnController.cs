@@ -17,8 +17,8 @@ namespace ANKU.Controllers.Concretes
         private IRayController _rayController;
         private InputAction _fire;
 
-        private bool _canFire;
-        
+        public bool CanFire { get; set; }
+
         private float timeToFire;
 
         private void Awake()
@@ -33,22 +33,24 @@ namespace ANKU.Controllers.Concretes
             _fire.performed += Fire;
             _fire.Enable();
         }
+        
+        protected override void Start()
+        {
+            base.Start();
+            CanFire = true;
+        }
 
         protected override void Update()
         {
             if (Input.GetMouseButtonDown(0) && 
                 FindObjectOfType<CharacterChangerController>().playerEnum == PlayerEnum.VILLIAN_CHARACTER_MODE && 
-                Time.time >= timeToFire)
+                Time.time >= timeToFire &&
+                CanFire)
             { 
                 timeToFire = Time.time + 1/fireRate;
                 Spawn();
             }
 
-        }
-
-        protected override void Start()
-        {
-            base.Start();
         }
 
         private void Spawn()

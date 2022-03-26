@@ -21,23 +21,27 @@ namespace ANKU.UIs.Concretes
         [SerializeField] private float timeToSpendInFormLevel;
         [SerializeField] private CharacterChangerController characterChanger;
         [SerializeField] private TextMeshProUGUI _levelText;
+        [SerializeField] private int _difficultyIndex;
+
+        private int _difficulty;
 
         private Slider _slider;
         
         private float _currentFormTime;
         private int _currentLevelIndex;
         private bool IsReachedMaxFormLevel => _currentLevelIndex == totalFormLevels ? true : false;
+        public int Difficulty => _difficulty;
 
         private void Start()
         {            
             _slider = GetComponent<Slider>();
+            _difficulty = 1;
         }
 
         private void Update()
         {
             _slider.maxValue = timeToSpendInFormLevel;
             _levelText.text = (_currentLevelIndex + 1).ToString();
-            
             if (characterChanger.playerEnum == PlayerEnum.VILLIAN_CHARACTER_MODE)
             {
                 Debug.Log("REACHED MAX LEVEL: " + IsReachedMaxFormLevel);
@@ -57,6 +61,8 @@ namespace ANKU.UIs.Concretes
                 {
                     _currentFormTime = 0.0f;
                     _currentLevelIndex++;
+                    _difficulty = _currentLevelIndex * _difficultyIndex;
+                    Debug.Log("DIFFICULTY: " + _difficulty);
                 }
 
                 if (_currentLevelIndex >= totalFormLevels)

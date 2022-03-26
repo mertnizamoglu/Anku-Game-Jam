@@ -19,9 +19,6 @@ public class PuzzleCamera : MonoBehaviour
 
         ActivateMouseCursor();
 
-        Debug.Log("puzzleMode" + puzzleMode);
-
-        Debug.Log("puzzleArea" +InPuzzleArea);
     }
 
     private void OnTriggerStay(Collider other) 
@@ -86,13 +83,13 @@ public class PuzzleCamera : MonoBehaviour
         {
             
             Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.None;
+            Cursor.lockState = CursorLockMode.Locked;
             
         }
         else if(InPuzzleArea && puzzleMode && Input.GetKeyDown(KeyCode.E))
         {
             Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 }

@@ -83,7 +83,7 @@ namespace ANKU.Controllers.Concretes
                 
                 SoundManager.Instance.PlayVillianSound();
                 SoundManager.Instance.StopAngelSound();
-                SoundManager.Instance.PlayVillianModeCountSound(true);
+                SoundManager.Instance.PlayVillianModeCountSound(false);
                 
                 hand.GetComponent<Animator>().SetBool("hand", false);
                 

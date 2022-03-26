@@ -17,7 +17,6 @@ namespace ANKU.Controllers.Concretes
         private IRayController _rayController;
         private InputAction _fire;
 
-        public bool CanFire { get; set; }
 
         private float timeToFire;
 
@@ -37,15 +36,13 @@ namespace ANKU.Controllers.Concretes
         protected override void Start()
         {
             base.Start();
-            CanFire = true;
         }
 
         protected override void Update()
         {
             if (Input.GetMouseButtonDown(0) && 
                 FindObjectOfType<CharacterChangerController>().playerEnum == PlayerEnum.VILLIAN_CHARACTER_MODE && 
-                Time.time >= timeToFire &&
-                CanFire)
+                Time.time >= timeToFire)
             { 
                 timeToFire = Time.time + 1/fireRate;
                 Spawn();

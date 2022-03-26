@@ -23,14 +23,17 @@ public class ButtonManager : MonoBehaviour
     {
         ControlButtons();
         CheckWinStatus();
+        
     }
 
     private void ControlButtons()
     {
         foreach (var button in _buttons)
         {
+            
             for (int i = 0; i < button.MyIndex; i++)
             {
+                Debug.Log("INDEX: " + i);
                 if (_buttons[i].CompareTag("HitButton") && !_buttons[i].buttonState)
                 {
                     Die();
@@ -55,10 +58,10 @@ public class ButtonManager : MonoBehaviour
     {
         foreach(var button in _buttons)
         {
-            Debug.Log("BUTTON COUNTER: " + counter);
+            if (button.CompareTag("NotHitButton")) counter = 0;
+            
             if (counter >= winCounter)
             {
-                
                 Debug.Log("game win");
             }
         }

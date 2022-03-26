@@ -22,7 +22,6 @@ namespace ANKU.UIs.Concretes
         [SerializeField] private CharacterChangerController characterChanger;
         [SerializeField] private TextMeshProUGUI _levelText;
 
-        private BulletSpawnController _bulletSpawnController;
         private Slider _slider;
         
         private float _currentFormTime;
@@ -31,11 +30,6 @@ namespace ANKU.UIs.Concretes
         private int _intFormLevel;
         private bool _isFormLevelChanged;
         private bool IsReachedMaxFormLevel => _currentLevelIndex == totalFormLevels ? true : false;
-
-        private void Awake()
-        {
-            _bulletSpawnController = FindObjectOfType<BulletSpawnController>();
-        }
 
         private void Start()
         {            
@@ -58,11 +52,7 @@ namespace ANKU.UIs.Concretes
 
                 if (IsReachedMaxFormLevel)
                 {
-                    if (!_bulletSpawnController.Equals(null))
-                    {
-                        _bulletSpawnController.CanFire = false;
-                        _slider.value = _currentFormTime;
-                    }
+                    _slider.value = _currentFormTime;
                 }
                 
                 _slider.value = _currentFormTime;

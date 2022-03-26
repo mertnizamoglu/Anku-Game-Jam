@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Buttons : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class Buttons : MonoBehaviour
 
     private void Awake()
     {
-        _buttonManager = FindObjectOfType<ButtonManager>();
+        // _buttonManager = FindObjectOfType<ButtonManager>();
     }
 
     void Start()
@@ -28,14 +29,24 @@ public class Buttons : MonoBehaviour
         buttonState = false;
     }
 
+    private void Update()
+    {
+        
+        if(buttonState)
+            this.gameObject.GetComponent<Image>().color = Color.green;
+        else
+            this.gameObject.GetComponent<Image>().color = Color.white;
+    }
+
     public void OnClickButton()
     {
         buttonState = !buttonState;
+        
     }
 
     public void OnCheckWinCondition()
     {
-        _buttonManager.counter++;
+        // _buttonManager.counter++;
     }
 
     public bool CheckButtonState()
@@ -46,7 +57,6 @@ public class Buttons : MonoBehaviour
     public void SetButtonIndex()
     {
         _myIndex = Int32.Parse(this.gameObject.name.ToString());
-        Debug.Log("MY INDEX IS:" + _myIndex);
     }
 
     public string CheckButtonTag()

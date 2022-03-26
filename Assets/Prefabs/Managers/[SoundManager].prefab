@@ -47,3 +47,5 @@ MonoBehaviour:
   villianModeCounterSound: {fileID: 0}
   magicFireSound: {fileID: 0}
   puzzleFailSound: {fileID: 0}
+  villianBGMusic: {fileID: 0}
+  angelBGMusic: {fileID: 0}

@@ -25,9 +25,9 @@ namespace ANKU.UIs.Concretes
 
         private void Update()
         {
-            if(playerHealth.IsDead) return;
             _slider.value = playerHealth.CurrentHealth;
 
+            if (_slider.value <= 0) _slider.value = 0.0f;
         }
     }
 }

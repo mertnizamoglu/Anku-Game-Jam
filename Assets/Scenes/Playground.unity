@@ -472,7 +472,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalFormLevels: 3
-  timeToSpendInFormLevel: 15
+  timeToSpendInFormLevel: 5
   characterChanger: {fileID: 4416926083347132229}
   _levelText: {fileID: 951496616}
 --- !u!1 &542508511
@@ -1626,7 +1626,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 1955060041}
   spawnObject: {fileID: 7647929827755953164, guid: 369b0dec88850ab4f96b928bfd3ea937, type: 3}
   _playerController: {fileID: 236799939}
-  bulletSpeed: 10
+  bulletSpeed: 30
   fireRate: 4
 --- !u!1 &2139482495
 GameObject:
@@ -3134,7 +3134,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2066021796835540261
 Transform:
   m_ObjectHideFlags: 0

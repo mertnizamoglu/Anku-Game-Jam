@@ -552,7 +552,6 @@ GameObject:
   - component: {fileID: 1618971336435558534}
   - component: {fileID: 3681614540007595612}
   - component: {fileID: 2459576492222276819}
-  - component: {fileID: 802566513}
   m_Layer: 5
   m_Name: Play
   m_TagString: Untagged
@@ -662,7 +661,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 802566513}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: StartGame
         m_Mode: 1
@@ -674,18 +673,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &802566513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1658015761604948018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88ea65bd66cc1804c8ef400e99a2fe2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1959496600367303475
 GameObject:
   m_ObjectHideFlags: 0

@@ -39,6 +39,8 @@ namespace ANKU.Controllers.Concretes
         private void Start()
         {
             hand.GetComponent<Animator>().SetBool("hand", true);
+            
+            SoundManager.Instance.PlayAngelSound();
         }
 
         private void Update()

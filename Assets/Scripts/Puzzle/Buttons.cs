@@ -9,19 +9,11 @@ public class Buttons : MonoBehaviour
     // her butonun 2 state'i olabilir. True/False. True ise tıklanmış, false ise tıklanmamış.
  
     public bool buttonState;
-
     private ButtonManager _buttonManager;
-    
-    private GameObject thisButton;
-    private int _myIndex;
-
-
-    public int MyIndex => _myIndex;
-
 
     private void Awake()
     {
-        // _buttonManager = FindObjectOfType<ButtonManager>();
+        _buttonManager = FindObjectOfType<ButtonManager>();
     }
 
     void Start()
@@ -36,42 +28,37 @@ public class Buttons : MonoBehaviour
             this.gameObject.GetComponent<Image>().color = Color.green;
         else
             this.gameObject.GetComponent<Image>().color = Color.white;
+
+        CheckTagOnClick();
     }
 
     public void OnClickButton()
     {
-        buttonState = !buttonState;
-        
-    }
-
-    public void OnCheckWinCondition()
-    {
-        // _buttonManager.counter++;
-    }
-
-    public bool CheckButtonState()
-    {
-        return this.buttonState;
+        buttonState = !buttonState;  
     }
 
     public void SetButtonIndex()
     {
-        _myIndex = Int32.Parse(this.gameObject.name.ToString());
+        if(this.gameObject.CompareTag("HitButton"))
+        {
+            _buttonManager.ClickedHitButtonIndex = Int32.Parse(this.gameObject.name.ToString());
+            
+            Debug.Log("my index:" + _buttonManager.ClickedHitButtonIndex);
+        }
+
+        
     }
 
-    public string CheckButtonTag()
+    public void CheckTagOnClick()
     {
-        return this.gameObject.tag;
+        if(this.gameObject.CompareTag("NotHitButton") && buttonState == true )
+        {
+            _buttonManager.mistakenState = true;
+        }
     }
 
-    public void ResetButtonState()
-    {
-        this.buttonState = false;
-    }
+    
 
-    public void SetState(bool boll)
-    {
-        this.buttonState = boll;
-    }
+
 
 }

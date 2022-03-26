@@ -11,8 +11,8 @@ public class ButtonManager : MonoBehaviour
     public int counter;
     public int winCounter;
     public GameObject[] _winObjects;
-
-    private bool _flag = false;
+    public bool mistakenState;
+    public int ClickedHitButtonIndex;
 
     // private event System.Action<int> OnButtonClicked;
     private void Start()
@@ -21,50 +21,41 @@ public class ButtonManager : MonoBehaviour
     }
     private void Update()
     {
-        ControlButtons();
-        CheckWinStatus();
+
+        ControlButtonsOrder();
+
+        if(mistakenState == true)
+        {
+            ResetAllButtonStates();
+        }
+
+
+    }
+
+    private void ControlButtonsOrder()
+    {
         
-    }
-
-    private void ControlButtons()
-    {
-        foreach (var button in _buttons)
-        {
             
-            for (int i = 0; i < button.MyIndex; i++)
+        for (int i = 0; i < ClickedHitButtonIndex; i++)
+        {
+            if(_buttons[i].CompareTag("HitButton") && _buttons[i].buttonState == false)
             {
-                Debug.Log("INDEX: " + i);
-                if (_buttons[i].CompareTag("HitButton") && !_buttons[i].buttonState)
-                {
-                    Die();
-                }
-                if (_buttons[i].CompareTag("NotHitButton") && _buttons[i].buttonState)
-                {
-                    Die();
-                }
+                mistakenState = true;
+                ClickedHitButtonIndex = 0;
             }
         }
     }
-    private void Die()
+    
+    public void ResetAllButtonStates()
     {
-        foreach (var button in _buttons)
+        for(int i = 0; i<9; i++)
         {
-            Debug.Log("lose aldin");
-            button.buttonState = false;
+            _buttons[i].buttonState = false;
         }
-    }
 
-    private void CheckWinStatus()
-    {
-        foreach(var button in _buttons)
-        {
-            if (button.CompareTag("NotHitButton")) counter = 0;
-            
-            if (counter >= winCounter)
-            {
-                Debug.Log("game win");
-            }
-        }
-    }
+        mistakenState = false;
 
+    }
 }
+
+

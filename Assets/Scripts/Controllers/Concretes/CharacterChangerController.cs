@@ -41,6 +41,19 @@ namespace ANKU.Controllers.Concretes
             hand.GetComponent<Animator>().SetBool("hand", true);
         }
 
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Tab) && playerEnum == PlayerEnum.ANGEL_CHARACTER_MODE)
+            {
+                hand.GetComponent<Animator>().SetBool("hand", true);
+            }  
+            if (Input.GetKeyDown(KeyCode.Tab) && playerEnum == PlayerEnum.VILLIAN_CHARACTER_MODE)
+            {
+                hand.GetComponent<Animator>().SetBool("hand", false);
+            }
+            
+        }
+
         private void OnDisable()
         {
             _changeCharacter.Disable();

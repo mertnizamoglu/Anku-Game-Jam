@@ -20,7 +20,7 @@ namespace ANKU.Controllers.Concretes
         {
             if (Input.GetMouseButtonDown(0) && FindObjectOfType<CharacterChangerController>().playerEnum == PlayerEnum.VILLIAN_CHARACTER_MODE)
             {
-                _animation.PlayAttackAnimation(true);
+                _animation.PlayAttackAnimation(false);
             }
         }
     }

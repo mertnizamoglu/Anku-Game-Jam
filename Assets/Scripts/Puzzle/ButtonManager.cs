@@ -29,7 +29,9 @@ public class ButtonManager : MonoBehaviour
     {
 
         ControlButtonsOrder();
-
+        
+        
+        
         if(mistakenState == true)
         {
             ResetAllButtonStates();

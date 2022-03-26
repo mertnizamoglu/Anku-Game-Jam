@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using ANKU.Controllers.Concretes;
 using StarterAssets;
 using UnityEngine;
 
@@ -8,7 +9,11 @@ public class PuzzleCamera : MonoBehaviour
     public bool InPuzzleArea;
     public bool puzzleMode = false;
     public FirstPersonController _firstPersonController;
+    public CharacterChangerController _characterChanger;
+    public GameObject _arm;
     public GameObject puzzleCamera;
+    public ButtonManager buttonManager;
+    
     
     
     void Update()
@@ -18,6 +23,16 @@ public class PuzzleCamera : MonoBehaviour
         DeactivePlayerController();
 
         ActivateMouseCursor();
+
+        if (buttonManager.winPuzzle)
+        {
+            puzzleCamera.SetActive(false);
+            _firstPersonController.enabled = true;
+            _arm.SetActive(true);
+            _characterChanger.enabled = true;
+            Cursor.visible = false;
+            this.gameObject.SetActive(false);
+        }
 
     }
 
@@ -68,10 +83,14 @@ public class PuzzleCamera : MonoBehaviour
         if(InPuzzleArea && !puzzleMode && Input.GetKeyDown(KeyCode.E))
         {
             _firstPersonController.enabled = true;
+            _arm.SetActive(true);
+            _characterChanger.enabled = true;
         }
         else if(InPuzzleArea && puzzleMode && Input.GetKeyDown(KeyCode.E))
         {
             _firstPersonController.enabled = false; 
+            _arm.SetActive(false);
+            _characterChanger.enabled = false;
         }
     }
 

@@ -64,6 +64,9 @@ namespace ANKU.Managers.Concretes
         public void PlayPuzzleFailSound()
         {
             if(puzzleFailSound.isPlaying) return;
+            
+            StopAngelSound();
+            StopVillianSound();
             puzzleFailSound.Play();
         }
 

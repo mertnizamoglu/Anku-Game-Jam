@@ -10,12 +10,8 @@ public class Buttons : MonoBehaviour
     // her butonun 2 state'i olabilir. True/False. True ise tıklanmış, false ise tıklanmamış.
  
     public bool buttonState;
-    private ButtonManager _buttonManager;
+    public ButtonManager buttonManager;
 
-    private void Awake()
-    {
-        _buttonManager = FindObjectOfType<ButtonManager>();
-    }
 
     void Start()
     {
@@ -42,9 +38,9 @@ public class Buttons : MonoBehaviour
     {
         if(this.gameObject.CompareTag("HitButton") && buttonState == false)
         {
-            _buttonManager.ClickedHitButtonIndex = Int32.Parse(this.gameObject.name.ToString());
+            buttonManager.ClickedHitButtonIndex = Int32.Parse(this.gameObject.name.ToString());
 
-            Debug.Log("my index:" + _buttonManager.ClickedHitButtonIndex);
+            Debug.Log("my index:" + buttonManager.ClickedHitButtonIndex);
         }   
     }
 
@@ -52,7 +48,7 @@ public class Buttons : MonoBehaviour
     {
         if(this.gameObject.CompareTag("NotHitButton") && buttonState == true )
         {
-            _buttonManager.mistakenState = true;
+            buttonManager.mistakenState = true;
             SoundManager.Instance.PlayPuzzleFailSound();
         }
     }

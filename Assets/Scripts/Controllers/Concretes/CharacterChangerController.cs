@@ -68,6 +68,8 @@ namespace ANKU.Controllers.Concretes
                 SetComponentVisibilities(0, false);
                 SetComponentVisibilities(1, true);
                 
+                SoundManager.Instance.PlayVillianSound();
+                SoundManager.Instance.StopAngelSound();
                 SoundManager.Instance.PlayVillianModeCountSound(true);
                 
                 hand.GetComponent<Animator>().SetBool("hand", false);
@@ -79,7 +81,11 @@ namespace ANKU.Controllers.Concretes
                 playerEnum--;
                 SetComponentVisibilities(0, true);
                 SetComponentVisibilities(1, false);
+                
+                SoundManager.Instance.PlayAngelSound();
+                SoundManager.Instance.StopVillianSound();
                 SoundManager.Instance.PlayVillianModeCountSound(false);
+                
                 hand.GetComponent<Animator>().SetBool("hand", true);
             }
         }

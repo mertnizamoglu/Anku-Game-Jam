@@ -9743,6 +9743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc626c71a193cf648bbf42961e2e7209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impactEffect: {fileID: 7647929827755953164, guid: 14896cd0e31804349b4992b0afcc1630, type: 3}
 --- !u!1 &8533273983474056497
 GameObject:
   m_ObjectHideFlags: 0

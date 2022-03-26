@@ -13,7 +13,7 @@ namespace ANKU.Controllers.Concretes
         private void Update()
         {
             ControlDead();
-            ApplyMove();
+            // ApplyMove();
         }
 
         private void ApplyMove()

@@ -3934,7 +3934,7 @@ ParticleSystem:
     intensityCurve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4819,7 +4819,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e6f324301cd9f1c41b522e2204100353, type: 2}
+  - {fileID: 2100000, guid: e64b0a38f56a8294a87f7eee597ca1d1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9623,7 +9623,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e6f324301cd9f1c41b522e2204100353, type: 2}
+  - {fileID: 2100000, guid: e64b0a38f56a8294a87f7eee597ca1d1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9682,7 +9682,7 @@ GameObject:
   - component: {fileID: 748035751319555966}
   - component: {fileID: 3729890647000824636}
   m_Layer: 0
-  m_Name: Vertex_Bullet
+  m_Name: Vertex_BulletV2
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9889,16 +9889,36 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6847795030743231502, guid: 34d2832d629046e45a7a14de3a14931f, type: 3}
-      propertyPath: m_Parameters.widthMultiplier
-      value: 5
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6847795030743231502, guid: 34d2832d629046e45a7a14de3a14931f, type: 3}
+      propertyPath: m_MinVertexDistance
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6847795030743231502, guid: 34d2832d629046e45a7a14de3a14931f, type: 3}
+      propertyPath: m_Parameters.alignment
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6847795030743231502, guid: 34d2832d629046e45a7a14de3a14931f, type: 3}
+      propertyPath: m_Parameters.shadowBias
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6847795030743231502, guid: 34d2832d629046e45a7a14de3a14931f, type: 3}
+      propertyPath: m_Parameters.numCapVertices
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6847795030743231502, guid: 34d2832d629046e45a7a14de3a14931f, type: 3}
+      propertyPath: m_Parameters.numCornerVertices
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6847795030743231502, guid: 34d2832d629046e45a7a14de3a14931f, type: 3}
+      propertyPath: m_Parameters.generateLightingData
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6847795030743231503, guid: 34d2832d629046e45a7a14de3a14931f, type: 3}
       propertyPath: m_Name
       value: Trail (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6847795030979258636, guid: 34d2832d629046e45a7a14de3a14931f, type: 3}
-      propertyPath: m_Parameters.widthMultiplier
-      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34d2832d629046e45a7a14de3a14931f, type: 3}

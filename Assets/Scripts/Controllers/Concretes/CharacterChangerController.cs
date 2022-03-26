@@ -13,7 +13,6 @@ namespace ANKU.Controllers.Concretes
     public class CharacterChangerController : MonoBehaviour
     {
         [SerializeField] private List<PlayerController> playerControllers;
-        [SerializeField] private GameObject arm;
         [SerializeField] public PlayerEnum playerEnum;
         private float currentHealth;
 
@@ -33,11 +32,6 @@ namespace ANKU.Controllers.Concretes
             _changeCharacter = inputActions.Player.ChangeCharacter;
             _changeCharacter.Enable();
             _changeCharacter.performed += ChangeCharacter;
-        }
-
-        private void Start()
-        {
-            arm.GetComponent<Animator>().SetBool("isChangedHand", true);
         }
 
         private void OnDisable()
@@ -62,26 +56,18 @@ namespace ANKU.Controllers.Concretes
                 SetComponentVisibilities(0, false);
                 SetComponentVisibilities(1, true);
                 
-                arm.GetComponent<Animator>().SetBool("isChangedHand", false);
-
             }
             else if(playerEnum == PlayerEnum.VILLIAN_CHARACTER_MODE)
             {
                 playerEnum--;
                 SetComponentVisibilities(0, true);
                 SetComponentVisibilities(1, false);
-                
-                arm.GetComponent<Animator>().SetBool("isChangedHand", true);
             }
         }
 
         private void SetComponentVisibilities(int index, bool situation)
         {
             playerControllers[index].enabled = situation;
-        } 
-        private void SetComponentVisibilities(bool situation)
-        {
-            arm.SetActive(situation);
         } 
     }
 }

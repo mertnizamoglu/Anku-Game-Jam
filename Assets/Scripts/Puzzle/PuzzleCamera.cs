@@ -49,8 +49,6 @@ public class PuzzleCamera : MonoBehaviour
 
     void ControlPuzzleCamera()
     {
-        Debug.Log(Input.GetKeyDown(KeyCode.E));
-
         if(InPuzzleArea && !puzzleMode && Input.GetKeyDown(KeyCode.E))
         {
             puzzleCamera.SetActive(true);

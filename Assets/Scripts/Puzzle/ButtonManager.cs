@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,6 +12,8 @@ public class ButtonManager : MonoBehaviour
     public int winCounter;
     public GameObject[] _winObjects;
 
+    private bool _flag = false;
+
     // private event System.Action<int> OnButtonClicked;
     private void Start()
     {
@@ -19,8 +22,7 @@ public class ButtonManager : MonoBehaviour
     private void Update()
     {
         ControlButtons();
-
-        Debug.Log(winCounter);
+        CheckWinStatus();
     }
 
     private void ControlButtons()
@@ -53,7 +55,12 @@ public class ButtonManager : MonoBehaviour
     {
         foreach(var button in _buttons)
         {
-            
+            Debug.Log("BUTTON COUNTER: " + counter);
+            if (counter >= winCounter)
+            {
+                
+                Debug.Log("game win");
+            }
         }
     }
 

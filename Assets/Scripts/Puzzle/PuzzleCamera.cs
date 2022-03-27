@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using ANKU.Controllers.Concretes;
+using ANKU.UIs.Concretes;
 using StarterAssets;
 using UnityEngine;
 
@@ -13,9 +15,14 @@ public class PuzzleCamera : MonoBehaviour
     public GameObject _arm;
     public GameObject puzzleCamera;
     public ButtonManager buttonManager;
-    
-    
-    
+
+    private InteractTextUI _interactTextUI;
+
+    private void Start()
+    {
+        _interactTextUI = FindObjectOfType<InteractTextUI>();
+    }
+
     void Update()
     {
         ControlPuzzleCamera();
@@ -85,12 +92,14 @@ public class PuzzleCamera : MonoBehaviour
             _firstPersonController.enabled = true;
             _arm.SetActive(true);
             _characterChanger.enabled = true;
+            _interactTextUI.gameObject.SetActive(true);
         }
         else if(InPuzzleArea && puzzleMode && Input.GetKeyDown(KeyCode.E))
         {
             _firstPersonController.enabled = false; 
             _arm.SetActive(false);
             _characterChanger.enabled = false;
+            _interactTextUI.gameObject.SetActive(false);
         }
     }
 

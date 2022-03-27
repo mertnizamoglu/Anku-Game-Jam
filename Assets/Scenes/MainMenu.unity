@@ -1500,6 +1500,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 8944629690223044663}
+  camera: {fileID: 1388793662}
 --- !u!4 &2136180541
 Transform:
   m_ObjectHideFlags: 0
@@ -2867,7 +2868,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1661539031456228784
 Transform:
   m_ObjectHideFlags: 3

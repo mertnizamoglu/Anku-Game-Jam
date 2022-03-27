@@ -43,6 +43,7 @@ public class PuzzleCamera : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             InPuzzleArea = true;
+            _interactTextUI.gameObject.SetActive(true);
         }
         else
         {
@@ -56,6 +57,7 @@ public class PuzzleCamera : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             InPuzzleArea = false;
+            _interactTextUI.gameObject.SetActive(false);
         }
         else
         {
@@ -87,14 +89,12 @@ public class PuzzleCamera : MonoBehaviour
             _firstPersonController.enabled = true;
             _arm.SetActive(true);
             _characterChanger.enabled = true;
-            _interactTextUI.gameObject.SetActive(true);
         }
         else if(InPuzzleArea && puzzleMode && Input.GetKeyDown(KeyCode.E))
         {
             _firstPersonController.enabled = false; 
             _arm.SetActive(false);
             _characterChanger.enabled = false;
-            _interactTextUI.gameObject.SetActive(false);
         }
     }
 

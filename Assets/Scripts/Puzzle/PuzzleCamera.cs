@@ -24,7 +24,11 @@ public class PuzzleCamera : MonoBehaviour
         DeactivePlayerController();
 
         ActivateMouseCursor();
-
+        if(buttonManager == null)
+        {
+            return;
+        }
+        
         if (buttonManager.winPuzzle)
         {
             puzzleCamera.SetActive(false);

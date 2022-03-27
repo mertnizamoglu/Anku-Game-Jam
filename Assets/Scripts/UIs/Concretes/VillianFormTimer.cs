@@ -22,6 +22,8 @@ namespace ANKU.UIs.Concretes
         [SerializeField] private CharacterChangerController characterChanger;
         [SerializeField] private TextMeshProUGUI _levelText;
         [SerializeField] private int _difficultyIndex;
+        [SerializeField] private GameObject fill;
+        [SerializeField] private GameObject bg;
 
         private int _difficulty;
 
@@ -40,8 +42,20 @@ namespace ANKU.UIs.Concretes
 
         private void Update()
         {
+            
+            Debug.Log("CURRENT LEVEL INDEX:" + _currentLevelIndex);
+            //255, 155, 85
+            
+            if (_currentLevelIndex == 0) fill.GetComponent<Image>().color = Color.red;
+            else if (_currentLevelIndex == 1) fill.GetComponent<Image>().color = Color.grey;
+            else if (_currentLevelIndex == 2) fill.GetComponent<Image>().color = Color.black;
+            
+            if (_currentLevelIndex == 3) bg.GetComponent<Image>().color = Color.black;
+
+            
             _slider.maxValue = timeToSpendInFormLevel;
             _levelText.text = (_currentLevelIndex + 1).ToString();
+            
             if (characterChanger.playerEnum == PlayerEnum.VILLIAN_CHARACTER_MODE)
             {
                 Debug.Log("REACHED MAX LEVEL: " + IsReachedMaxFormLevel);

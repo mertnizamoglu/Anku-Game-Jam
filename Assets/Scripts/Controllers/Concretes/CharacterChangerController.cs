@@ -73,6 +73,11 @@ namespace ANKU.Controllers.Concretes
                 this.gameObject.GetComponent<HealthCombat>().TakeDamage(20);
                 Debug.Log(this.gameObject.GetComponent<HealthCombat>().CurrentHealth);
             }
+
+            if (other.gameObject.CompareTag("ToTheNextLevel"))
+            {
+                GameManager.Instance.LoadNextScene();
+            }
         }
 
         private void ChangeCharacter(InputAction.CallbackContext context)

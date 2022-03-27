@@ -11,6 +11,7 @@ TagManager:
   - Bullet
   - SpawnZone
   - AttackHand
+  - ToTheNextLevel
   layers:
   - Default
   - TransparentFX

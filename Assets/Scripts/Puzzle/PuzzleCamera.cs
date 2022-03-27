@@ -15,6 +15,7 @@ public class PuzzleCamera : MonoBehaviour
     public GameObject _arm;
     public GameObject puzzleCamera;
     public ButtonManager buttonManager;
+    public bool flag = true;
 
 
     void Update()
@@ -28,12 +29,12 @@ public class PuzzleCamera : MonoBehaviour
         {
             return;
         }
-        
+
         if (buttonManager.winPuzzle)
         {
             puzzleCamera.SetActive(false);
             _firstPersonController.enabled = true;
-            _arm.SetActive(false);
+         
             _characterChanger.enabled = true;
             Cursor.visible = false;
             this.gameObject.SetActive(false);

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using ANKU.Animations.Concretes;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -41,9 +42,7 @@ namespace ANKU.Managers.Concretes
         public void PlayButtonPressed(int sceneIndex)
         {
             StartCoroutine(PlayButtonEnumerator(sceneIndex));
-        }
-        public void CreditsButtonPressed()
-        {
+            AnimationManager.Instance.PlayAnimation();
         }
 
         private IEnumerator PlayButtonEnumerator(int sceneIndex)

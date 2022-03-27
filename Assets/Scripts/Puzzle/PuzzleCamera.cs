@@ -97,14 +97,13 @@ public class PuzzleCamera : MonoBehaviour
 
     void ActivateMouseCursor()
     {
-        if(InPuzzleArea && !puzzleMode && Input.GetKeyDown(KeyCode.E))
+        if(InPuzzleArea && !puzzleMode && Input.GetKey(KeyCode.E))
         {
-            
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
             
         }
-        else if(InPuzzleArea && puzzleMode && Input.GetKeyDown(KeyCode.E))
+        else if(InPuzzleArea && puzzleMode && Input.GetKey(KeyCode.E))
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;

@@ -124,5 +124,4 @@ public class PuzzleCamera : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
         }
     }
-
 }

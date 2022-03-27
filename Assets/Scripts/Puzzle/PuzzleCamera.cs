@@ -29,7 +29,7 @@ public class PuzzleCamera : MonoBehaviour
         {
             puzzleCamera.SetActive(false);
             _firstPersonController.enabled = true;
-            _arm.SetActive(true);
+            _arm.SetActive(false);
             _characterChanger.enabled = true;
             Cursor.visible = false;
             this.gameObject.SetActive(false);
@@ -84,13 +84,11 @@ public class PuzzleCamera : MonoBehaviour
         if(InPuzzleArea && !puzzleMode && Input.GetKeyDown(KeyCode.E))
         {
             _firstPersonController.enabled = true;
-            _arm.SetActive(true);
             _characterChanger.enabled = true;
         }
         else if(InPuzzleArea && puzzleMode && Input.GetKeyDown(KeyCode.E))
         {
-            _firstPersonController.enabled = false; 
-            _arm.SetActive(false);
+           _firstPersonController.enabled = false;
             _characterChanger.enabled = false;
         }
     }
@@ -109,4 +107,5 @@ public class PuzzleCamera : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
         }
     }
+
 }

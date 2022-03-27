@@ -49,6 +49,8 @@ namespace ANKU.Controllers.Concretes
 
         private void Update()
         {
+            if(health.IsDead) GameManager.Instance.LoadSelfScene();
+            
             if (Input.GetKeyDown(KeyCode.Tab) && playerEnum == PlayerEnum.ANGEL_CHARACTER_MODE)
             {
                 hand.GetComponent<Animator>().SetBool("hand", true);
@@ -57,7 +59,6 @@ namespace ANKU.Controllers.Concretes
             {
                 hand.GetComponent<Animator>().SetBool("hand", false);
             }
-            
         }
 
         private void OnDisable()

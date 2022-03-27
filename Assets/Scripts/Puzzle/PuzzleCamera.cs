@@ -88,11 +88,13 @@ public class PuzzleCamera : MonoBehaviour
         if(InPuzzleArea && !puzzleMode && Input.GetKeyDown(KeyCode.E))
         {
             _firstPersonController.enabled = true;
+            if(_characterChanger == null) return;
             _characterChanger.enabled = true;
         }
         else if(InPuzzleArea && puzzleMode && Input.GetKeyDown(KeyCode.E))
         {
            _firstPersonController.enabled = false;
+           if(_characterChanger == null) return;
             _characterChanger.enabled = false;
         }
     }

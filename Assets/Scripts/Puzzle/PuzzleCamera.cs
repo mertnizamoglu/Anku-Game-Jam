@@ -16,12 +16,7 @@ public class PuzzleCamera : MonoBehaviour
     public GameObject puzzleCamera;
     public ButtonManager buttonManager;
 
-    private InteractTextUI _interactTextUI;
-
-    private void Start()
-    {
-        _interactTextUI = FindObjectOfType<InteractTextUI>();
-    }
+    [SerializeField] private InteractTextUI _interactTextUI;
 
     void Update()
     {

@@ -16,6 +16,8 @@ namespace ANKU.Controllers.Concretes
         [SerializeField] private List<PlayerController> playerControllers;
         [SerializeField] public PlayerEnum playerEnum;
         [SerializeField] private GameObject hand;
+        [SerializeField] private GameObject angelPostProcess;
+        [SerializeField] private GameObject villianPostProcess;
         private float currentHealth;
 
         public IHealth health;
@@ -39,7 +41,9 @@ namespace ANKU.Controllers.Concretes
         private void Start()
         {
             hand.GetComponent<Animator>().SetBool("hand", true);
-            
+
+            SetComponentVisibilities(angelPostProcess, true);
+            SetComponentVisibilities(villianPostProcess, false);
             SoundManager.Instance.PlayAngelSound();
         }
 
@@ -83,6 +87,9 @@ namespace ANKU.Controllers.Concretes
                 SetComponentVisibilities(0, false);
                 SetComponentVisibilities(1, true);
                 
+                SetComponentVisibilities(angelPostProcess, false);
+                SetComponentVisibilities(villianPostProcess, true);
+                
                 SoundManager.Instance.PlayVillianSound();
                 SoundManager.Instance.StopAngelSound();
                 SoundManager.Instance.PlayVillianModeCountSound(false);
@@ -96,6 +103,10 @@ namespace ANKU.Controllers.Concretes
                 playerEnum--;
                 SetComponentVisibilities(0, true);
                 SetComponentVisibilities(1, false);
+                    
+                SetComponentVisibilities(angelPostProcess, true);
+                SetComponentVisibilities(villianPostProcess, false);
+                
                 
                 SoundManager.Instance.PlayAngelSound();
                 SoundManager.Instance.StopVillianSound();
@@ -108,6 +119,11 @@ namespace ANKU.Controllers.Concretes
         private void SetComponentVisibilities(int index, bool situation)
         {
             playerControllers[index].enabled = situation;
+        } 
+        
+        private void SetComponentVisibilities(GameObject gameObject, bool situation)
+        {
+            gameObject.SetActive(situation);
         } 
     }
 }

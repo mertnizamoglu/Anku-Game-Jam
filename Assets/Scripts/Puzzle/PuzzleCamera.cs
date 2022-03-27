@@ -16,7 +16,6 @@ public class PuzzleCamera : MonoBehaviour
     public GameObject puzzleCamera;
     public ButtonManager buttonManager;
 
-    [SerializeField] private InteractTextUI _interactTextUI;
 
     void Update()
     {
@@ -43,7 +42,6 @@ public class PuzzleCamera : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             InPuzzleArea = true;
-            _interactTextUI.gameObject.SetActive(true);
         }
         else
         {
@@ -57,7 +55,6 @@ public class PuzzleCamera : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             InPuzzleArea = false;
-            _interactTextUI.gameObject.SetActive(false);
         }
         else
         {

@@ -8,10 +8,9 @@ using UnityEngine.UI;
 public class Buttons : MonoBehaviour
 {
     // her butonun 2 state'i olabilir. True/False. True ise tıklanmış, false ise tıklanmamış.
- 
+
     public bool buttonState;
     public ButtonManager buttonManager;
-
 
     void Start()
     {

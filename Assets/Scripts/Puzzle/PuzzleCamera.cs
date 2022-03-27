@@ -16,12 +16,6 @@ public class PuzzleCamera : MonoBehaviour
     public GameObject puzzleCamera;
     public ButtonManager buttonManager;
 
-    private InteractTextUI _interactTextUI;
-
-    private void Start()
-    {
-        _interactTextUI = FindObjectOfType<InteractTextUI>();
-    }
 
     void Update()
     {
@@ -35,7 +29,7 @@ public class PuzzleCamera : MonoBehaviour
         {
             puzzleCamera.SetActive(false);
             _firstPersonController.enabled = true;
-            _arm.SetActive(true);
+            _arm.SetActive(false);
             _characterChanger.enabled = true;
             Cursor.visible = false;
             this.gameObject.SetActive(false);
@@ -90,32 +84,28 @@ public class PuzzleCamera : MonoBehaviour
         if(InPuzzleArea && !puzzleMode && Input.GetKeyDown(KeyCode.E))
         {
             _firstPersonController.enabled = true;
-            _arm.SetActive(true);
             _characterChanger.enabled = true;
-            _interactTextUI.gameObject.SetActive(true);
         }
         else if(InPuzzleArea && puzzleMode && Input.GetKeyDown(KeyCode.E))
         {
-            _firstPersonController.enabled = false; 
-            _arm.SetActive(false);
+           _firstPersonController.enabled = false;
             _characterChanger.enabled = false;
-            _interactTextUI.gameObject.SetActive(false);
         }
     }
 
     void ActivateMouseCursor()
     {
-        if(InPuzzleArea && !puzzleMode && Input.GetKeyDown(KeyCode.E))
+        if(InPuzzleArea && !puzzleMode && Input.GetKey(KeyCode.E))
         {
-            
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
             
         }
-        else if(InPuzzleArea && puzzleMode && Input.GetKeyDown(KeyCode.E))
+        else if(InPuzzleArea && puzzleMode && Input.GetKey(KeyCode.E))
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
         }
     }
+
 }

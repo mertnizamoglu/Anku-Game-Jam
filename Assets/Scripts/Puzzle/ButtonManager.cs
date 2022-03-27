@@ -15,6 +15,7 @@ public class ButtonManager : MonoBehaviour
     public int ClickedHitButtonIndex = 0;
     public bool winPuzzle;
     public int buttonCount;
+    public GameObject _gate;
 
     // private event System.Action<int> OnButtonClicked;
     private void Start()
@@ -38,6 +39,12 @@ public class ButtonManager : MonoBehaviour
         }
 
         CheckWinStatus();
+
+        if(winPuzzle)
+        {
+            _gate.SetActive(false);
+        }
+
 
         Debug.Log("win puzzle status:" + winPuzzle);
         Debug.Log("counter:" + counter);

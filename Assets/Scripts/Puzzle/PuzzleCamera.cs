@@ -30,6 +30,18 @@ public class PuzzleCamera : MonoBehaviour
             return;
         }
 
+        if (puzzleMode)
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }  
+        
+        if (!puzzleMode)
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        
         if (buttonManager.winPuzzle)
         {
             puzzleCamera.SetActive(false);

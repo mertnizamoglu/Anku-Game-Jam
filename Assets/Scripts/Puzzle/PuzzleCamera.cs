@@ -25,11 +25,9 @@ public class PuzzleCamera : MonoBehaviour
         DeactivePlayerController();
 
         ActivateMouseCursor();
-        if(buttonManager == null)
-        {
-            return;
-        }
+       
 
+        if(buttonManager == null) return;
         if (puzzleMode)
         {
             Cursor.visible = true;

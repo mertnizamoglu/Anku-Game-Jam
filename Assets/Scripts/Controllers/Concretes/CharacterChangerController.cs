@@ -21,21 +21,21 @@ namespace ANKU.Controllers.Concretes
         private float currentHealth;
 
         public IHealth health;
-        public MyInputActions inputActions; 
+        // public MyInputActions inputActions; 
         
-        private InputAction _changeCharacter;
+        // private InputAction _changeCharacter;
         
         private void Awake()
         {
-            inputActions = new MyInputActions();
+            // inputActions = new MyInputActions();
             health = GetComponent<HealthCombat>();
         }
 
         private void OnEnable()
         {
-            _changeCharacter = inputActions.Player.ChangeCharacter;
-            _changeCharacter.Enable();
-            _changeCharacter.performed += ChangeCharacter;
+            // _changeCharacter = inputActions.Player.ChangeCharacter;
+            // _changeCharacter.Enable();
+            // _changeCharacter.performed += ChangeCharacter;
         }
 
         private void Start()
@@ -49,6 +49,7 @@ namespace ANKU.Controllers.Concretes
 
         private void Update()
         {
+            ChangeCharacter();
             if(health.IsDead) GameManager.Instance.LoadSelfScene();
             
             if (Input.GetKeyDown(KeyCode.Tab) && playerEnum == PlayerEnum.ANGEL_CHARACTER_MODE)
@@ -63,7 +64,7 @@ namespace ANKU.Controllers.Concretes
 
         private void OnDisable()
         {
-            _changeCharacter.Disable();
+            // _changeCharacter.Disable();
         }
 
         private void OnTriggerEnter(Collider other)
@@ -80,46 +81,50 @@ namespace ANKU.Controllers.Concretes
             }
         }
 
-        private void ChangeCharacter(InputAction.CallbackContext context)
+        private void ChangeCharacter()
         {
-            if (playerEnum == PlayerEnum.VILLIAN_CHARACTER_MODE)
+            if (Input.GetKeyDown(KeyCode.Tab))
             {
-                SoundManager.Instance.PlayVillianModeCountSound(true);
-            }
+                if (playerEnum == PlayerEnum.VILLIAN_CHARACTER_MODE)
+                {
+                    // SoundManager.Instance.PlayVillianModeCountSound(true);
+                }
             
-            if(playerEnum == PlayerEnum.ANGEL_CHARACTER_MODE)
-            {
-                playerEnum++;
-                SetComponentVisibilities(0, false);
-                SetComponentVisibilities(1, true);
+                if(playerEnum == PlayerEnum.ANGEL_CHARACTER_MODE)
+                {
+                    playerEnum++;
+                    SetComponentVisibilities(0, false);
+                    SetComponentVisibilities(1, true);
                 
-                SetComponentVisibilities(angelPostProcess, false);
-                SetComponentVisibilities(villianPostProcess, true);
+                    SetComponentVisibilities(angelPostProcess, false);
+                    SetComponentVisibilities(villianPostProcess, true);
                 
-                SoundManager.Instance.PlayVillianSound();
-                SoundManager.Instance.StopAngelSound();
-                SoundManager.Instance.PlayVillianModeCountSound(false);
+                    SoundManager.Instance.PlayVillianSound();
+                    SoundManager.Instance.StopAngelSound();
+                    // SoundManager.Instance.PlayVillianModeCountSound(false);
                 
-                hand.GetComponent<Animator>().SetBool("hand", false);
+                    hand.GetComponent<Animator>().SetBool("hand", false);
                 
-            }
+                }
             
-            else if(playerEnum == PlayerEnum.VILLIAN_CHARACTER_MODE)
-            {
-                playerEnum--;
-                SetComponentVisibilities(0, true);
-                SetComponentVisibilities(1, false);
+                else if(playerEnum == PlayerEnum.VILLIAN_CHARACTER_MODE)
+                {
+                    playerEnum--;
+                    SetComponentVisibilities(0, true);
+                    SetComponentVisibilities(1, false);
                     
-                SetComponentVisibilities(angelPostProcess, true);
-                SetComponentVisibilities(villianPostProcess, false);
+                    SetComponentVisibilities(angelPostProcess, true);
+                    SetComponentVisibilities(villianPostProcess, false);
                 
                 
-                SoundManager.Instance.PlayAngelSound();
-                SoundManager.Instance.StopVillianSound();
-                SoundManager.Instance.PlayVillianModeCountSound(false);
+                    SoundManager.Instance.PlayAngelSound();
+                    SoundManager.Instance.StopVillianSound();
+                    // SoundManager.Instance.PlayVillianModeCountSound(false);
                 
-                hand.GetComponent<Animator>().SetBool("hand", true);
+                    hand.GetComponent<Animator>().SetBool("hand", true);
+                }
             }
+        
         }
 
         private void SetComponentVisibilities(int index, bool situation)

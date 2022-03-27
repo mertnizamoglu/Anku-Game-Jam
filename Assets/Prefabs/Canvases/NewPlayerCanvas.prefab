@@ -289,7 +289,7 @@ MonoBehaviour:
   timeToSpendInFormLevel: 5
   characterChanger: {fileID: 0}
   _levelText: {fileID: 6380548259601131724}
-  _difficultyIndex: 2
+  _difficultyIndex: 3
   fill: {fileID: 6380548261064965915}
   bg: {fileID: 6380548259856490132}
 --- !u!1 &6380548259117260648

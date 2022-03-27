@@ -9,6 +9,7 @@ namespace ANKU.Animations.Concretes
     {
         public static AnimationManager Instance { get; private set; }
         [SerializeField] private GameObject door;
+        [SerializeField] private GameObject camera;
         private void Awake()
         {
             SingletonObject();
@@ -27,6 +28,7 @@ namespace ANKU.Animations.Concretes
         }
         public void PlayAnimation()
         {
+            camera.GetComponent<Animator>().SetBool("isAnimPlay", true);
             door.transform.Rotate(0, 90, 0);
         }
     }

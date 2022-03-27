@@ -340,6 +340,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 811792034486156611, guid: 15a6abfb70cded746ae6c605b3d7eee9, type: 3}
+      propertyPath: m_fontSize
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 811792034486156611, guid: 15a6abfb70cded746ae6c605b3d7eee9, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 69fb3dc913eac1a4c9d27fae8493bf62, type: 2}
+    - target: {fileID: 811792034486156611, guid: 15a6abfb70cded746ae6c605b3d7eee9, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 811792034486156611, guid: 15a6abfb70cded746ae6c605b3d7eee9, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3168853874304629179, guid: 69fb3dc913eac1a4c9d27fae8493bf62, type: 2}
     - target: {fileID: 2459576492222276819, guid: 15a6abfb70cded746ae6c605b3d7eee9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -380,6 +396,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 5362369528943530753, guid: 15a6abfb70cded746ae6c605b3d7eee9, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 69fb3dc913eac1a4c9d27fae8493bf62, type: 2}
+    - target: {fileID: 5362369528943530753, guid: 15a6abfb70cded746ae6c605b3d7eee9, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3168853874304629179, guid: 69fb3dc913eac1a4c9d27fae8493bf62, type: 2}
     - target: {fileID: 6015950395206087760, guid: 15a6abfb70cded746ae6c605b3d7eee9, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
@@ -488,6 +512,14 @@ PrefabInstance:
       propertyPath: m_RenderMode
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6610478100840101020, guid: 15a6abfb70cded746ae6c605b3d7eee9, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 69fb3dc913eac1a4c9d27fae8493bf62, type: 2}
+    - target: {fileID: 6610478100840101020, guid: 15a6abfb70cded746ae6c605b3d7eee9, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3168853874304629179, guid: 69fb3dc913eac1a4c9d27fae8493bf62, type: 2}
     - target: {fileID: 9018047435404248815, guid: 15a6abfb70cded746ae6c605b3d7eee9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -1069,7 +1101,10 @@ MonoBehaviour:
   InPuzzleArea: 0
   puzzleMode: 0
   _firstPersonController: {fileID: 8616685847522667330}
+  _characterChanger: {fileID: 0}
+  _arm: {fileID: 0}
   puzzleCamera: {fileID: 1074623831}
+  buttonManager: {fileID: 0}
 --- !u!4 &84713688839653678
 Transform:
   m_ObjectHideFlags: 0
@@ -1267,7 +1302,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 325709973212731693}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.20000005, y: 1.375, z: 0}
+  m_LocalPosition: {x: 0.24691364, y: 1.375, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8997996946128450047}
@@ -2145,7 +2180,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1661539030876919179}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.20000005, y: 1.375, z: 0}
+  m_LocalPosition: {x: 0.24691364, y: 1.375, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1661539031456228784}
@@ -3247,7 +3282,10 @@ MonoBehaviour:
   InPuzzleArea: 0
   puzzleMode: 0
   _firstPersonController: {fileID: 8616685847522667330}
+  _characterChanger: {fileID: 0}
+  _arm: {fileID: 0}
   puzzleCamera: {fileID: 1388793662}
+  buttonManager: {fileID: 0}
 --- !u!4 &2979218654127439727
 Transform:
   m_ObjectHideFlags: 0
@@ -4962,6 +5000,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 597692446110928794, guid: 7312eb589e1b281428cea26d00466da6, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 69fb3dc913eac1a4c9d27fae8493bf62, type: 2}
+    - target: {fileID: 597692446110928794, guid: 7312eb589e1b281428cea26d00466da6, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3168853874304629179, guid: 69fb3dc913eac1a4c9d27fae8493bf62, type: 2}
     - target: {fileID: 597692446131081312, guid: 7312eb589e1b281428cea26d00466da6, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -5042,6 +5088,14 @@ PrefabInstance:
       propertyPath: m_PresetInfoIsWorld
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3338635405131727920, guid: 7312eb589e1b281428cea26d00466da6, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 69fb3dc913eac1a4c9d27fae8493bf62, type: 2}
+    - target: {fileID: 3338635405131727920, guid: 7312eb589e1b281428cea26d00466da6, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3168853874304629179, guid: 69fb3dc913eac1a4c9d27fae8493bf62, type: 2}
     - target: {fileID: 6015950395206087762, guid: 7312eb589e1b281428cea26d00466da6, type: 3}
       propertyPath: m_Name
       value: MainMenu
@@ -5134,6 +5188,14 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 9127676543742512623, guid: 7312eb589e1b281428cea26d00466da6, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 69fb3dc913eac1a4c9d27fae8493bf62, type: 2}
+    - target: {fileID: 9127676543742512623, guid: 7312eb589e1b281428cea26d00466da6, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3168853874304629179, guid: 69fb3dc913eac1a4c9d27fae8493bf62, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7312eb589e1b281428cea26d00466da6, type: 3}
 --- !u!23 &6036831408128228960
@@ -7346,7 +7408,7 @@ Transform:
   m_GameObject: {fileID: 8616685847522667333}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.81, y: 0.81, z: 0.81}
   m_Children:
   - {fileID: 4135013736770212377}
   - {fileID: 5393215580071395152}

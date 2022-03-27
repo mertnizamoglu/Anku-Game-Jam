@@ -31,7 +31,7 @@ namespace ANKU.Controllers.Concretes
                 if (_hit.collider.gameObject.CompareTag("Enemy"))
                 {
                     FindObjectOfType<CrosshairUI>().GetComponent<Image>().color = Color.red;
-                    _hit.collider.gameObject.GetComponent<HealthCombat>().TakeDamage(20.0f);
+                    _hit.collider.gameObject.GetComponent<HealthCombat>().TakeDamage(50.0f);
                 }
             }
         }
